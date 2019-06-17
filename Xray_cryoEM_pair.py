@@ -12,32 +12,6 @@ from iotbx.bioinformatics import local_blast
 from iotbx.bioinformatics.structure import summarize_blast_output
 from iotbx.pdb.fetch import fetch
 from libtbx.easy_mp import pool_map
-master_params_str = """\
-model_name = None
-  .type = path
-  .multiple = False
-  .help = Model file name
-high_res = 1.5
-  .type = float
-  .help = High resolution pdb limit
-low_res = 3.5
-  .type = float
-  .help = Low resolution pdb limit
-identity = 100
-  .type = int
-  .help = sequence identity
-"""
-
-def master_params():
-  return iotbx.phil.parse(master_params_str, process_includes=True)
-
-def get_inputs(args, log, master_params):
-  cmdline = process_command_line_with_files(
-    args         = args,
-    master_phil  = master_params
-  )
-  params = cmdline.work.extract()
-  return params
 
 def get_perfect_pair(model,file_path, chain_ids=None):
   pdb_info = iotbx.bioinformatics.pdb_info.pdb_info_local()
