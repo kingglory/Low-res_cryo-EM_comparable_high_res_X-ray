@@ -31,14 +31,15 @@ def get_perfect_pair(res,data_type,model,file_path, chain_ids=None):
     blast_summary = summarize_blast_output("\n".join(blast_xml_result))
     pdb_ids_to_study = {}
     for hit in blast_summary:
-      print file_path,(chain.id)
+      ali_identity = 100*hit.length/chain.residue_groups_size()
+      if ali_identity<100:continue
       hit.show(out=sys.stdout)
-      if hit.identity < 95: continue
+      if hit.identity < 100: continue
       pdb_ids_to_study[hit.pdb_id] = hit.chain_id
       print pdb_ids_to_study,"*"*39
       pdb_pair_id = hit.pdb_id.lower()
       pdb_pair_chain_id = hit.chain_id
-      work_dir = "/home/wensong/pdb_bob/"
+      work_dir = "/home/wensong/PDB/pdb/"
       pdb_path = work_dir +str(pdb_pair_id[1:3])+"/pdb"+ pdb_pair_id + ".ent.gz"
       pdb_inp = iotbx.pdb.input(pdb_path)
       high_res = pdb_inp.resolution()
@@ -59,7 +60,8 @@ def run(file_path):
      if (data_type == "ELECTRON MICROSCOPY") and (3.0 <= res <=6.0):
        try:
          model = mmtbx.model.manager(model_input=iotbx.pdb.input(file_path))
-         tup = get_perfect_pair(res,data_type,model,file_path)
+         if model.size()<=11000:
+           tup = get_perfect_pair(res,data_type,model,file_path)
          if tup:
            result=tup
        except Exception, e:
@@ -68,7 +70,7 @@ def run(file_path):
  
 if __name__ == '__main__':
     files=[]
-    work_dir = "/home/wensong/pdb_bob/" 
+    work_dir = "/home/wensong/PDB/pdb/" 
     pdb_info = easy_pickle.load(file_name='pdb_dict.pickle')
     for key,value in pdb_info.items():
       file_name = "pdb"+key.lower()+".ent.gz"
@@ -90,6 +92,6 @@ if __name__ == '__main__':
         if pair is None:
           pair_list.remove(pair)
     if pair_list:
-      easy_pickle.dump("X_RAY_CYRO_EM_PAIR_98_new.pkl",pair_list)
+      easy_pickle.dump("X_RAY_CYRO_EM_PAIR_100_whole.pkl",pair_list)
     else:print "why None?end"*15
   
