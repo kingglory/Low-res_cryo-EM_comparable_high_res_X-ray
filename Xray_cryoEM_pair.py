@@ -90,6 +90,6 @@ if __name__ == '__main__':
         if pair is None:
           pair_list.remove(pair)
     if pair_list:
-      easy_pickle.dump("X_RAY_CYRO_EM_PAIR_98.pkl",pair_list)
+      easy_pickle.dump("X_RAY_CYRO_EM_PAIR_98_new.pkl",pair_list)
     else:print "why None?end"*15
   
