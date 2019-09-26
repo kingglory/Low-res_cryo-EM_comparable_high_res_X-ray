@@ -20,18 +20,20 @@ from cctbx.array_family import flex
 def prepare_hydrogen_restraints(model):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
+  pdb_code_ref = model[0:4]
   res = homology.file_perfect_pair(model, params)
   for r in res :
+    data_type_A = False
     print (r.chain_ref,r.match[0].chain_id,r.match[0])
     pdb_code_ref = model[0:4]
     pdb_code = r.match[0].pdb_code
     chain_id = r.match[0].chain_id
-
-    #easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
-
+    # easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
+    pdb_inp = iotbx.pdb.input(pdb_code+".pdb")
+    data_type_A =pdb_inp.get_experiment_type()
+    if data_type_A == False:continue
     he = iotbx.pdb.input(file_name=model).construct_hierarchy()
     hx = iotbx.pdb.input(file_name=pdb_code + ".pdb").construct_hierarchy()
-
     sel_e = he.atom_selection_cache().selection("protein and chain %s"%(r.chain_ref))
     he = he.select(sel_e)
     sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
@@ -50,7 +52,7 @@ def align_tow_chain(chain_A,chain_B):
   print (matches)
   equal = matches.count("|")
   similar = matches.count("*")
-  print ( "Number of matches after alignment: ", equal + similar)
+  print ( "Number of matches after alignment: ", equal )
 
 
 if __name__ == '__main__':
