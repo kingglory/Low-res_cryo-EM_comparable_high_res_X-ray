@@ -25,17 +25,20 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   hierarchy_new = pdb_inp.construct_hierarchy()
   return hierarchy_new
 
-def prepare_hydrogen_restraints(pdb_file,file_name="hbond.eff"):
+def prepare_hydrogen_restraints(pdb_file):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
   pdb_code_ref = pdb_file[0:4]
   res = homology.file_perfect_pair(pdb_file, params)
+  phil_result= {}
   for r in res :
     data_type_A = False
     #print (r.chain_ref,r.match[0].chain_id,r.match[0])
     pdb_code_ref = pdb_file[0:4]
     pdb_code = r.match[0].pdb_code
     chain_id = r.match[0].chain_id
+    match_info = pdb_code_ref+"_"+r.chain_ref+"_"+pdb_code+"_"+chain_id
+    print (match_info)
     # easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
     pdb_inp = iotbx.pdb.input(pdb_code+".pdb")
     data_type_A =pdb_inp.get_experiment_type()
@@ -51,11 +54,11 @@ def prepare_hydrogen_restraints(pdb_file,file_name="hbond.eff"):
     hx_h = add_hydrogen_for_hierarchy(hx)
     #align_tow_chain(chain_A, chain_B,hx_h.as_pdb_string())
     phil_obj = align_tow_chain(chain_A,chain_B,hx_h.as_pdb_string())
-    '''TO DO:
+    '''TO DO???????:
        replace chian A atoms informations by B atoms informations (res_id,chian_id)
     '''
-    with open(file_name, "w") as of:
-      print("geometry_restraints.edits {", file=of)
+    phil_result[match_info] = phil_obj
+  return phil_result
       
 
 def align_tow_chain(chain_A,chain_B,str_chain,
@@ -67,14 +70,14 @@ def align_tow_chain(chain_A,chain_B,str_chain,
     seq_a = se,
     seq_b = sx)
   alignment = align.extract_alignment()
+  #print (dir(alignment))
   matches = alignment.identity_matches()
+  match_part = alignment.exact_match_selections()
   a_seq = alignment.a
   b_seq = alignment.b
   ai_seq = alignment.i_seqs_a
   bi_seq = alignment.i_seqs_b
   '''
-  print (dir(alignment))
-  print(dir(matches))
   print (a_seq)
   print (matches)
   print (b_seq)
@@ -133,14 +136,28 @@ def align_tow_chain(chain_A,chain_B,str_chain,
     top = top + base
   top_final = top[1:]
   top_final.replace(chain_A.id,chain_B.id)
-  print (top_final)
+  #print (top_final)
   return top_final
+def dump_phil_file(pdb_file,for_phenix_refine=True):
+  top = """refinement{
+    geometry_restraints.edits{
+      %s
+    }
+  }
+      """
+  phil_result = prepare_hydrogen_restraints(pdb_file)
+  for match_info, phil_obj in phil_result.items():
+    top_str = top % phil_obj
+    #print(top_str)
+    file_name = match_info + ".eff"
+    with open(file_name, 'w') as fileobject:
+      fileobject.write(top_str)
 
-
-   #return phil_obj
+    #return phil_obj
 if __name__ == '__main__':
     start = time.time()
-    prepare_hydrogen_restraints('6d9h.pdb')
+    #prepare_hydrogen_restraints('6d9h.pdb')
+    dump_phil_file('6d9h.pdb')
     end = time.time()
     time_cost = (end - start)
     print ("it cost % seconds" % time_cost)
