@@ -25,7 +25,7 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   hierarchy_new = pdb_inp.construct_hierarchy()
   return hierarchy_new
 
-def prepare_hydrogen_restraints(pdb_file):
+def prepare_hydrogen_restraints(pdb_file,file_name="hbond.eff"):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
   pdb_code_ref = pdb_file[0:4]
@@ -49,9 +49,16 @@ def prepare_hydrogen_restraints(pdb_file):
     chain_A = (he.only_chain())
     chain_B = (hx.only_chain())
     hx_h = add_hydrogen_for_hierarchy(hx)
-    align_tow_chain(chain_A, chain_B,hx_h.as_pdb_string())
-    #phil_obj = align_tow_chain(chain_A,chain_B,phil_obj)
-def align_tow_chain(chain_A,chain_B,str_chain, file_name="hbond.eff",
+    #align_tow_chain(chain_A, chain_B,hx_h.as_pdb_string())
+    phil_obj = align_tow_chain(chain_A,chain_B,hx_h.as_pdb_string())
+    '''TO DO:
+       replace chian A atoms informations by B atoms informations (res_id,chian_id)
+    '''
+    with open(file_name, "w") as of:
+      print("geometry_restraints.edits {", file=of)
+      
+
+def align_tow_chain(chain_A,chain_B,str_chain,
               distance_ideal=None, sigma_dist=0.1,angle_ideal = None,
               sigma_angle=2, use_actual=True):
   se = chain_A.as_padded_sequence()
@@ -122,18 +129,12 @@ def align_tow_chain(chain_A,chain_B,str_chain, file_name="hbond.eff",
             sigma = 5
             }
       """ % (a, h, d, at)
-    print(dis)
-    print(ang)
     base = dis + ang
     top = top + base
   top_final = top[1:]
+  top_final.replace(chain_A.id,chain_B.id)
   print (top_final)
-  '''
-  with open("hbond.eff", 'w') as fileobject:
-    f = fileobject.read()
-    f.replace(chain_A.id,chain_B.id)
-
-  '''
+  return top_final
 
 
    #return phil_obj
