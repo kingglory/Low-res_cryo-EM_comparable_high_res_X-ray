@@ -105,7 +105,8 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   f = "chain %s and resseq %s and name %s"
   top = "a"
   for r in result:
-    for (i) in range(min(len(i_seqs),len(j_seqs))):
+    for (i) in i_seqs:
+      print (i)
       if reses_X[i] is None:continue
       if reses_E[match_result[i]] is None:continue
       if r.atom_H.resseq == reses_X[i].resseq:
