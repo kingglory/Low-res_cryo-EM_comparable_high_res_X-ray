@@ -32,14 +32,12 @@ def prepare_hydrogen_restraints(pdb_file):
   res = homology.file_perfect_pair(pdb_file, params)
   phil_result= {}
   for r in res :
-    data_type_A = False
-    #print (r.chain_ref,r.match[0].chain_id,r.match[0])
+    data_type_X = False
     pdb_code_ref = pdb_file[0:4]
     pdb_code = r.match[0].pdb_code.lower()
     chain_id = r.match[0].chain_id
     match_info = pdb_code_ref+"_"+r.chain_ref+"_"+pdb_code+"_"+chain_id
-    #print (match_info)
-    #easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
+    easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
     # there are two conformers in chian B 233 5kdo.pdb,
     # so cann't keep only one conformer situation in hierarchy
     easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code+".pdb"))
@@ -57,6 +55,7 @@ def prepare_hydrogen_restraints(pdb_file):
     hx_h = add_hydrogen_for_hierarchy(hx)
     phil_obj = align_tow_chain(chain_E,chain_X,hx_h.as_pdb_string())
     phil_result[match_info] = phil_obj
+    dump_phil_file(phil_result)
   return phil_result
 
 def dump_phil_file(phil_result,for_phenix_refine=True):
@@ -84,12 +83,11 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   chain_E_id = chain_E.id
   chain_X_id = chain_X.id
   (i_seqs,j_seqs) = alignment.exact_match_selections()
-  match_result = {}
+  match_X_E = {}
   for (i,j) in  zip(i_seqs,j_seqs):
-    match_result[j+1]=i+1
+    match_X_E[j+1]=i+1
   reses_E = chain_E.residues()
   reses_X = chain_X.residues()
-  #print (reses_X[0].resseq,reses_E[0].resseq)
   pdb_inp = iotbx.pdb.input(source_info=None, lines=str_chain_X)
   model = mmtbx.model.manager(
     model_input=pdb_inp,
@@ -99,11 +97,15 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   f = "chain %s and resseq %s and name %s"
   top = "a"
   for r in result:
-    print (type(r.atom_A.resseq),type(match_result[6]))
-    h = f % (chain_E_id, match_result[int(r.atom_H.resseq.strip())], r.atom_H.name)
-    a = f % (chain_E_id, match_result[int(r.atom_A.resseq.strip())], r.atom_A.name)
-    d = f % (chain_E_id, match_result[int(r.atom_D.resseq.strip())], r.atom_D.name)
-    print (h,a,d)
+    num_h = int(r.atom_H.resseq.strip())
+    num_a = int(r.atom_A.resseq.strip())
+    num_d = int(r.atom_D.resseq.strip())
+    if num_h not in match_X_E.keys(): continue
+    if num_a not in match_X_E.keys(): continue
+    if num_d not in match_X_E.keys(): continue
+    h = f % (chain_E_id, match_X_E[int(r.atom_H.resseq.strip())], r.atom_H.name)
+    a = f % (chain_E_id, match_X_E[int(r.atom_A.resseq.strip())], r.atom_A.name)
+    d = f % (chain_E_id, match_X_E[int(r.atom_D.resseq.strip())], r.atom_D.name)
     if (not use_actual):
       if (r.d_HA < 2.5):
         dt = 2.05
@@ -135,15 +137,13 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
     """ % (a, h, d, at)
     base = dis + ang
     top = top + base
-  top_final = top[1:]
-  dump_phil_file(top_final)
+  phil_obj = top[1:]
+  print (phil_obj)
+  return phil_obj
 
-
-    #return phil_obj
 if __name__ == '__main__':
     start = time.time()
     prepare_hydrogen_restraints('6d9h.pdb')
-    #dump_phil_file('6d9h.pdb')
     end = time.time()
     time_cost = (end - start)
     print ("it cost % seconds" % time_cost)
