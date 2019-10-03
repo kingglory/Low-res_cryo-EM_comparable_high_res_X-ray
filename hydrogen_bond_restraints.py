@@ -99,42 +99,42 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   f = "chain %s and resseq %s and name %s"
   top = "a"
   for r in result:
-      print (r.atom_H.resseq)
-      h = f % (chain_E_id, match_result[r.atom_H.resseq], r.atom_H.name)
-      a = f % (chain_E_id, match_result[r.atom_A.resseq], r.atom_A.name)
-      d = f % (chain_E_id, match_result[r.atom_D.resseq], r.atom_D.name)
-      print (h,a,d)
-      if (not use_actual):
-        if (r.d_HA < 2.5):
-          dt = 2.05
-        else:
-          dt = 2.8
-        if (r.a_DHA < 130):
-          at = 115
-        else:
-          at = 160
+    print (type(r.atom_A.resseq),type(match_result[6]))
+    h = f % (chain_E_id, match_result[int(r.atom_H.resseq.strip())], r.atom_H.name)
+    a = f % (chain_E_id, match_result[int(r.atom_A.resseq.strip())], r.atom_A.name)
+    d = f % (chain_E_id, match_result[int(r.atom_D.resseq.strip())], r.atom_D.name)
+    print (h,a,d)
+    if (not use_actual):
+      if (r.d_HA < 2.5):
+        dt = 2.05
       else:
-        dt = r.d_HA
-        at = r.a_DHA
-      dis = """bond {
+        dt = 2.8
+      if (r.a_DHA < 130):
+        at = 115
+      else:
+        at = 160
+    else:
+      dt = r.d_HA
+      at = r.a_DHA
+    dis = """bond {
             atom_selection_1 = %s
             atom_selection_2 = %s
             symmetry_operation = %s
             distance_ideal = %f
             sigma = 0.05
             }
-        """ % (h, a, str(r.symop), dt)
-      if (str(r.symop) != "x,y,z"): continue
-      ang = """angle {
+    """ % (h, a, str(r.symop), dt)
+    if (str(r.symop) != "x,y,z"): continue
+    ang = """angle {
             atom_selection_1 = %s
             atom_selection_2 = %s
             atom_selection_3 = %s
             angle_ideal = %f
             sigma = 5
             }
-        """ % (a, h, d, at)
-      base = dis + ang
-      top = top + base
+    """ % (a, h, d, at)
+    base = dis + ang
+    top = top + base
   top_final = top[1:]
   dump_phil_file(top_final)
 
