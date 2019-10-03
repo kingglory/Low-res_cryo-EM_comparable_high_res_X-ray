@@ -33,12 +33,12 @@ def prepare_hydrogen_restraints(pdb_file):
   phil_result= {}
   for r in res :
     data_type_A = False
-    print (r.chain_ref,r.match[0].chain_id,r.match[0])
+    #print (r.chain_ref,r.match[0].chain_id,r.match[0])
     pdb_code_ref = pdb_file[0:4]
     pdb_code = r.match[0].pdb_code.lower()
     chain_id = r.match[0].chain_id
     match_info = pdb_code_ref+"_"+r.chain_ref+"_"+pdb_code+"_"+chain_id
-    print (match_info)
+    #print (match_info)
     #easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
     # there are two conformers in chian B 233 5kdo.pdb,
     # so cann't keep only one conformer situation in hierarchy
@@ -81,21 +81,15 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
     seq_a = se,
     seq_b = sx)
   alignment = align.extract_alignment()
-  a_seq = alignment.i_seqs_a
-  b_seq = alignment.i_seqs_b
-  identity_matches = alignment.identity_matches()
-  match = alignment.matches()
-  alignment.pretty_print()
-  #print (identity_matches)
-  #print (a_seq)
-  #print (match)
-  #print (b_seq)
+  chain_E_id = chain_E.id
+  chain_X_id = chain_X.id
   (i_seqs,j_seqs) = alignment.exact_match_selections()
   match_result = {}
+  for (i,j) in  zip(i_seqs,j_seqs):
+    match_result[j+1]=i+1
   reses_E = chain_E.residues()
   reses_X = chain_X.residues()
-  for i in range(len(i_seqs)):
-    match_result[i_seqs[i]]=j_seqs[i]
+  #print (reses_X[0].resseq,reses_E[0].resseq)
   pdb_inp = iotbx.pdb.input(source_info=None, lines=str_chain_X)
   model = mmtbx.model.manager(
     model_input=pdb_inp,
@@ -105,47 +99,42 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   f = "chain %s and resseq %s and name %s"
   top = "a"
   for r in result:
-    for (i) in i_seqs:
-      print (i)
-      if reses_X[i] is None:continue
-      if reses_E[match_result[i]] is None:continue
-      if r.atom_H.resseq == reses_X[i].resseq:
-        h = f % (reses_E[match_result[i]].parent().parent().id, reses_E[match_result[i]].resseq, r.atom_H.name)
-      if r.atom_A.resseq == reses_X[i].resseq:
-        a = f % (reses_E[match_result[i]].parent().parent().id, reses_E[match_result[i]].resseq, r.atom_A.name)
-      if r.atom_D.resseq == reses_X[i].resseq:
-        d = f % (reses_E[match_result[i]].parent().parent().id, reses_E[match_result[i]].resseq, r.atom_D.name)
-    if (not use_actual):
-      if (r.d_HA < 2.5):
-        dt = 2.05
+      print (r.atom_H.resseq)
+      h = f % (chain_E_id, match_result[r.atom_H.resseq], r.atom_H.name)
+      a = f % (chain_E_id, match_result[r.atom_A.resseq], r.atom_A.name)
+      d = f % (chain_E_id, match_result[r.atom_D.resseq], r.atom_D.name)
+      print (h,a,d)
+      if (not use_actual):
+        if (r.d_HA < 2.5):
+          dt = 2.05
+        else:
+          dt = 2.8
+        if (r.a_DHA < 130):
+          at = 115
+        else:
+          at = 160
       else:
-        dt = 2.8
-      if (r.a_DHA < 130):
-        at = 115
-      else:
-        at = 160
-    else:
-      dt = r.d_HA
-      at = r.a_DHA
-    dis = """bond {
+        dt = r.d_HA
+        at = r.a_DHA
+      dis = """bond {
             atom_selection_1 = %s
             atom_selection_2 = %s
             symmetry_operation = %s
             distance_ideal = %f
             sigma = 0.05
             }
-      """ % (h, a, str(r.symop), dt)
-    if (str(r.symop) != "x,y,z"): continue
-    ang = """angle {
+        """ % (h, a, str(r.symop), dt)
+      if (str(r.symop) != "x,y,z"): continue
+      ang = """angle {
             atom_selection_1 = %s
             atom_selection_2 = %s
             atom_selection_3 = %s
             angle_ideal = %f
             sigma = 5
             }
-      """ % (a, h, d, at)
-    base = dis + ang
-    top = top + base
+        """ % (a, h, d, at)
+      base = dis + ang
+      top = top + base
   top_final = top[1:]
   dump_phil_file(top_final)
 
