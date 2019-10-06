@@ -1,18 +1,18 @@
 from __future__ import absolute_import, division, print_function
-import iotbx.pdb
-import mmtbx.model
-from libtbx.utils import null_out
-from libtbx.test_utils import approx_equal
-from phenix.programs import homology
-from mmtbx.nci import hbond
 import time
 import mmtbx
-import mmtbx.alignment
-from libtbx import easy_run
 import iotbx.pdb
-import iotbx.pdb.fetch
 import iotbx.phil
+import mmtbx.model
+import mmtbx.alignment
+import iotbx.pdb.fetch
+from mmtbx.nci import hbond
+from libtbx import easy_run
+from libtbx.utils import Sorry
+from libtbx.utils import null_out
+from phenix.programs import homology
 import iotbx.bioinformatics.pdb_info
+from libtbx.test_utils import approx_equal
 from mmtbx.utils import run_reduce_with_timeout
 
 def add_hydrogen_for_hierarchy(hierarchy_old):
@@ -25,38 +25,33 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   hierarchy_new = pdb_inp.construct_hierarchy()
   return hierarchy_new
 
-def prepare_hydrogen_restraints(pdb_file):
+def prepare_hydrogen_restraints(hierarchy,pdb_id):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
-  pdb_code_ref = pdb_file[0:4]
-  res = homology.file_perfect_pair(pdb_file, params)
-  phil_result= {}
-  for r in res :
-    data_type_X = False
-    pdb_code_ref = pdb_file[0:4]
-    pdb_code = r.match[0].pdb_code.lower()
-    chain_id = r.match[0].chain_id
-    match_info = pdb_code_ref+"_"+r.chain_ref+"_"+pdb_code+"_"+chain_id
-    easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
-    # there are two conformers in chian B 233 5kdo.pdb,
-    # so cann't keep only one conformer situation in hierarchy
-    easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code+".pdb"))
-    pdb_inp = iotbx.pdb.input(pdb_code+".pdb_modified.pdb")
-    data_type_X =pdb_inp.get_experiment_type()
-    if data_type_X == False:continue
-    he = iotbx.pdb.input(file_name=pdb_file).construct_hierarchy()
-    hx = iotbx.pdb.input(file_name=pdb_code + ".pdb_modified.pdb").construct_hierarchy()
-    sel_e = he.atom_selection_cache().selection("protein and chain %s"%(r.chain_ref))
-    he = he.select(sel_e)
-    sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
-    hx = hx.select(sel_x)
-    chain_E = (he.only_chain())
-    chain_X = (hx.only_chain())
-    hx_h = add_hydrogen_for_hierarchy(hx)
-    phil_obj = align_tow_chain(chain_E,chain_X,hx_h.as_pdb_string())
-    phil_result[match_info] = phil_obj
-    dump_phil_file(phil_result)
-  return phil_result
+  if (hierarchy is not None):
+    for chain in hierarchy.only_model().chains():
+      sequence = chain.as_padded_sequence()
+      res = homology.perfect_pair(sequence, params)
+      phil_result= {}
+      if res is None:continue
+      for r in res :
+        pdb_code = r.pdb_code.lower()
+        chain_id = r.chain_id.lower()
+        match_info = pdb_id+"_"+chain.id.lower()+"_"+pdb_code+"_"+chain_id
+        easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
+        # there are two conformers in chian B 233 5kdo.pdb,
+        # so cann't keep only one conformer situation in hierarchy
+        easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code+".pdb"))
+        hx = iotbx.pdb.input(file_name=pdb_code + ".pdb_modified.pdb").construct_hierarchy()
+        sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
+        hx = hx.select(sel_x)
+        chain_E = chain
+        chain_X = (hx.only_chain())
+        hx_h = add_hydrogen_for_hierarchy(hx)
+        phil_obj = align_tow_chain(chain_E,chain_X,hx_h.as_pdb_string())
+        phil_result[match_info] = phil_obj
+        dump_phil_file(phil_result)
+  #return phil_result
 
 def dump_phil_file(phil_result,for_phenix_refine=True):
   top = """refinement{
@@ -143,7 +138,9 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
 
 if __name__ == '__main__':
     start = time.time()
-    prepare_hydrogen_restraints('6d9h.pdb')
+    pdb_inp = iotbx.pdb.input('6d9h.pdb')
+    hierarchy = homology.get_hierarchy(pdb_inp)
+    prepare_hydrogen_restraints(hierarchy,pdb_id="6d9h")
     end = time.time()
     time_cost = (end - start)
     print ("it cost % seconds" % time_cost)
