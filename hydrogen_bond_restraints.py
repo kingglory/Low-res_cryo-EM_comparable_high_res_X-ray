@@ -25,10 +25,13 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   hierarchy_new = pdb_inp.construct_hierarchy()
   return hierarchy_new
 
-def prepare_hydrogen_restraints(hierarchy,pdb_id):
+def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
   if (hierarchy is not None):
+    he_h = add_hydrogen_for_hierarchy(hierarchy)
+    atoms = he_h.atoms()
+    atom_total = atoms.size()
     for chain in hierarchy.only_model().chains():
       sequence = chain.as_padded_sequence()
       res = homology.perfect_pair(sequence, params)
@@ -42,7 +45,10 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id):
         # there are two conformers in chian B 233 5kdo.pdb,
         # so cann't keep only one conformer situation in hierarchy
         easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code+".pdb"))
-        hx = iotbx.pdb.input(file_name=pdb_code + ".pdb_modified.pdb").construct_hierarchy()
+        pdb_inp = iotbx.pdb.input(pdb_code + ".pdb_modified.pdb")
+        data_type_X = pdb_inp.get_experiment_type()
+        if data_type_X != "X-RAY DIFFRACTION": continue
+        hx = pdb_inp.construct_hierarchy()
         sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
         hx = hx.select(sel_x)
         chain_E = chain
@@ -50,7 +56,9 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id):
         hx_h = add_hydrogen_for_hierarchy(hx)
         phil_obj = align_tow_chain(chain_E,chain_X,hx_h.as_pdb_string())
         phil_result[match_info] = phil_obj
-        dump_phil_file(phil_result)
+        if dump_phil_files==True:
+          dump_phil_file(phil_result)
+
   #return phil_result
 
 def dump_phil_file(phil_result,for_phenix_refine=True):
@@ -89,6 +97,12 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
     process_input=True,
     log=null_out())
   result = mmtbx.nci.hbond.find(model=model).get_result()
+  for r in reses_E:
+    if int(r.resseq.strip())-1 in i_seqs:
+      print (r.atoms_size())
+      #print (r.atoms_size(),r.resname,r.resseq,chain_E_id)
+
+
   f = "chain %s and resseq %s and name %s"
   top = "a"
   for r in result:
@@ -133,7 +147,7 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
     base = dis + ang
     top = top + base
   phil_obj = top[1:]
-  print (phil_obj)
+  #print (phil_obj)
   return phil_obj
 
 if __name__ == '__main__':
