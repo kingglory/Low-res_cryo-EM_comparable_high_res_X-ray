@@ -151,13 +151,13 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   return phil_obj
 
 if __name__ == '__main__':
+    start = time.time()
     test_files = ["6d9h.pdb","5k7l.pdb","5vms.pdb","5vm7.pdb","6gdg.pdb","5kmg.pdb","5owx.pdb"]
     for pdb_file in test_files:
-      start = time.time()
       print (pdb_file,"*"*50)
-      pdb_inp = iotbx.pdb.input('6d9h.pdb')
+      pdb_inp = iotbx.pdb.input(pdb_file)
       hierarchy = homology.get_hierarchy(pdb_inp)
-      prepare_hydrogen_restraints(hierarchy,pdb_id="6d9h")
+      prepare_hydrogen_restraints(hierarchy,pdb_id=pdb_file[:4])
     end = time.time()
     time_cost = (end - start)
     print ("it cost % seconds" % time_cost)
