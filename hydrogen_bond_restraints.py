@@ -42,12 +42,17 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
         chain_id = r.chain_id.lower()
         match_info = pdb_id+"_"+chain.id.lower()+"_"+pdb_code+"_"+chain_id
         easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
+        pdb_inp = iotbx.pdb.input(pdb_code + ".pdb")
+        data_type_X = pdb_inp.get_experiment_type()
+        #print (dir(pdb_inp))
+        data_resolution = pdb_inp.resolution()
+        #print(pdb_id * 30, data_type_X)
+        if data_resolution < 2.0:continue
+        if data_type_X != "X-RAY DIFFRACTION": continue
         # there are two conformers in chian B 233 5kdo.pdb,
         # so cann't keep only one conformer situation in hierarchy
         easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code+".pdb"))
         pdb_inp = iotbx.pdb.input(pdb_code + ".pdb_modified.pdb")
-        data_type_X = pdb_inp.get_experiment_type()
-        if data_type_X != "X-RAY DIFFRACTION": continue
         hx = pdb_inp.construct_hierarchy()
         sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
         hx = hx.select(sel_x)
@@ -58,6 +63,9 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
         phil_result[match_info] = phil_obj
         if dump_phil_files==True:
           dump_phil_file(phil_result)
+        print (pdb_code + ".pdb_modified.pdb")
+        easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.pdb"))
+        easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.cif"))
 
   #return phil_result
 
