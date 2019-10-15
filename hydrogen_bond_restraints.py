@@ -66,6 +66,9 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
         print (pdb_code + ".pdb_modified.pdb")
         easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.pdb"))
         easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.cif"))
+        easy_run.call("rm -r {0}".format(pdb_code + ".pdb"))
+    easy_run.call("rm -r {0}".format("hbond.eff"))
+    easy_run.call("rm -r {0}".format("myprotein.fasta"))
 
   #return phil_result
 
