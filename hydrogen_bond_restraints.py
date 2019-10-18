@@ -28,7 +28,7 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   hierarchy_new = pdb_inp.construct_hierarchy()
   return hierarchy_new
 
-def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
+def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True,SS_percent=True):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
   if (hierarchy is not None):
@@ -36,6 +36,7 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
     atoms = he_h.atoms()
     atom_total = atoms.size()
     phils = "a"
+    num_sum = 0
     for chain in hierarchy.only_model().chains():
       sequence = chain.as_padded_sequence()
       res = homology.perfect_pair(sequence, params)
@@ -61,8 +62,9 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
         chain_E = chain
         chain_X = (hx.only_chain())
         hx_h = add_hydrogen_for_hierarchy(hx)
-        phil_obj = align_tow_chain(chain_E,chain_X,hx_h.as_pdb_string())
+        (phil_obj, num_sub) = align_tow_chain(chain_E,chain_X,hx_h.as_pdb_string())
         if phil_obj is None: continue
+        num_sum = num_sum + num_sub
         phils = phils + phil_obj
         easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.pdb"))
         easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.cif"))
@@ -71,9 +73,13 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
     if dump_phil_files==True:
       phils=phils[1:]
       dump_phil_file(phils,pdb_id)
+    if SS_percent==True:
+      p = (float('%.4f'%(float(num_sum) /atom_total)))*100
+      print ((pdb_id )*50,p)
   easy_run.call("rm -r {0}".format("hbond.eff"))
   easy_run.call("rm -r {0}".format("myprotein.fasta"))
-  #return phil_result
+  #return (phils,p)
+
 def dump_phil_file(phils,pdb_id,for_phenix_refine=True):
   top = """refinement{
       geometry_restraints.edits{
@@ -125,13 +131,11 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
     process_input=True,
     log=null_out())
   result = mmtbx.nci.hbond.find(model=model).get_result()
+  num_sub = 0
   for r in reses_E:
     if int(r.resseq.strip())-1 in i_seqs:
-      pass
-      #print (r.atoms_size())
+      num_sub = num_sub + r.atoms_size()
       #print (r.atoms_size(),r.resname,r.resseq,chain_E_id)
-
-
   f = "chain %s and resseq %s and name %s"
   top = "a"
   for r in result:
@@ -177,7 +181,7 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
     top = top + base
   phil_obj = top[1:]
   #print (phil_obj)
-  return phil_obj
+  return (phil_obj,num_sub)
 
 if __name__ == '__main__':
     start = time.time()
