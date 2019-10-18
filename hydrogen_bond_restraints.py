@@ -16,6 +16,9 @@ from libtbx.test_utils import approx_equal
 from mmtbx.utils import run_reduce_with_timeout
 
 def add_hydrogen_for_hierarchy(hierarchy_old):
+  xray_structure = hierarchy_old.extract_xray_structure()
+  xray_structure.convert_to_isotropic()
+  hierarchy_old.adopt_xray_structure(xray_structure)
   rr = run_reduce_with_timeout(
     stdin_lines=hierarchy_old.as_pdb_string().splitlines(),
     file_name=None,  # "model.pdb.gz",
@@ -32,6 +35,7 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
     he_h = add_hydrogen_for_hierarchy(hierarchy)
     atoms = he_h.atoms()
     atom_total = atoms.size()
+    phils = "a"
     for chain in hierarchy.only_model().chains():
       sequence = chain.as_padded_sequence()
       res = homology.perfect_pair(sequence, params)
@@ -44,10 +48,8 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
         easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
         pdb_inp = iotbx.pdb.input(pdb_code + ".pdb")
         data_type_X = pdb_inp.get_experiment_type()
-        #print (dir(pdb_inp))
         data_resolution = pdb_inp.resolution()
-        #print(pdb_id * 30, data_type_X)
-        if data_resolution < 2.0:continue
+        #if data_resolution < 2.0:continue
         if data_type_X != "X-RAY DIFFRACTION": continue
         # there are two conformers in chian B 233 5kdo.pdb,
         # so cann't keep only one conformer situation in hierarchy
@@ -60,19 +62,33 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True):
         chain_X = (hx.only_chain())
         hx_h = add_hydrogen_for_hierarchy(hx)
         phil_obj = align_tow_chain(chain_E,chain_X,hx_h.as_pdb_string())
-        phil_result[match_info] = phil_obj
-        if dump_phil_files==True:
-          dump_phil_file(phil_result)
-        print (pdb_code + ".pdb_modified.pdb")
+        if phil_obj is None: continue
+        phils = phils + phil_obj
         easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.pdb"))
         easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.cif"))
         easy_run.call("rm -r {0}".format(pdb_code + ".pdb"))
-    easy_run.call("rm -r {0}".format("hbond.eff"))
-    easy_run.call("rm -r {0}".format("myprotein.fasta"))
-
+        #phil_result[match_info] = phil_obj
+    if dump_phil_files==True:
+      phils=phils[1:]
+      dump_phil_file(phils,pdb_id)
+  easy_run.call("rm -r {0}".format("hbond.eff"))
+  easy_run.call("rm -r {0}".format("myprotein.fasta"))
   #return phil_result
+def dump_phil_file(phils,pdb_id,for_phenix_refine=True):
+  top = """refinement{
+      geometry_restraints.edits{
+        %s
+      }
+    }
+        """
+  file_name = pdb_id + ".eff"
+  top_str = top % phils
+  with open(file_name, 'w') as fileobject:
+    fileobject.write(top_str)
 
-def dump_phil_file(phil_result,for_phenix_refine=True):
+
+'''
+def dump_phil_files(phil_result,for_phenix_refine=True):
   top = """refinement{
     geometry_restraints.edits{
       %s
@@ -80,11 +96,12 @@ def dump_phil_file(phil_result,for_phenix_refine=True):
   }
       """
   for match_info, phil_obj in phil_result.items():
+    phils = phil_obj+phils
     top_str = top % phil_obj
     file_name = match_info + ".eff"
     with open(file_name, 'w') as fileobject:
       fileobject.write(top_str)
-
+'''
 def align_tow_chain(chain_E,chain_X,str_chain_X,
               distance_ideal=None, sigma_dist=0.1,angle_ideal = None,
               sigma_angle=2, use_actual=True):
@@ -110,7 +127,8 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   result = mmtbx.nci.hbond.find(model=model).get_result()
   for r in reses_E:
     if int(r.resseq.strip())-1 in i_seqs:
-      print (r.atoms_size())
+      pass
+      #print (r.atoms_size())
       #print (r.atoms_size(),r.resname,r.resseq,chain_E_id)
 
 
