@@ -1,4 +1,5 @@
 from __future__ import absolute_import, division, print_function
+import os
 import time
 import mmtbx
 import iotbx.pdb
@@ -8,6 +9,7 @@ import mmtbx.alignment
 import iotbx.pdb.fetch
 from mmtbx.nci import hbond
 from libtbx import easy_run
+from libtbx import easy_pickle
 from libtbx.utils import Sorry
 from libtbx.utils import null_out
 from phenix.programs import homology
@@ -28,16 +30,18 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   hierarchy_new = pdb_inp.construct_hierarchy()
   return hierarchy_new
 
-def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True,SS_percent=True):
+def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=False,SS_percent=True):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
   if (hierarchy is not None):
     he_h = add_hydrogen_for_hierarchy(hierarchy)
+    #print (dir(he_h))
     atoms = he_h.atoms()
     atom_total = atoms.size()
     phils = "a"
     num_sum = 0
-    for chain in hierarchy.only_model().chains():
+    for chain in hierarchy.chains():
+      if not chain.is_protein(): continue
       sequence = chain.as_padded_sequence()
       res = homology.perfect_pair(sequence, params)
       phil_result= {}
@@ -59,11 +63,13 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True,SS_percent
         hx = pdb_inp.construct_hierarchy()
         sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
         hx = hx.select(sel_x)
+        #print (type(hx),dir(hx))
         chain_E = chain
         chain_X = (hx.only_chain())
         hx_h = add_hydrogen_for_hierarchy(hx)
         (phil_obj, num_sub) = align_tow_chain(chain_E,chain_X,hx_h.as_pdb_string())
         if phil_obj is None: continue
+        if num_sub == 0: continue
         num_sum = num_sum + num_sub
         phils = phils + phil_obj
         easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.pdb"))
@@ -75,10 +81,9 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=True,SS_percent
       dump_phil_file(phils,pdb_id)
     if SS_percent==True:
       p = (float('%.4f'%(float(num_sum) /atom_total)))*100
-      print ((pdb_id )*50,p)
   easy_run.call("rm -r {0}".format("hbond.eff"))
   easy_run.call("rm -r {0}".format("myprotein.fasta"))
-  #return (phils,p)
+  return (p)
 
 def dump_phil_file(phils,pdb_id,for_phenix_refine=True):
   top = """refinement{
@@ -111,6 +116,12 @@ def dump_phil_files(phil_result,for_phenix_refine=True):
 def align_tow_chain(chain_E,chain_X,str_chain_X,
               distance_ideal=None, sigma_dist=0.1,angle_ideal = None,
               sigma_angle=2, use_actual=True):
+  #print (type(chain_E),type(chain_X))
+  #
+
+
+
+  int (dir(chain_X))
   se = chain_E.as_padded_sequence()
   sx = chain_X.as_padded_sequence()
   align = mmtbx.alignment.align(
@@ -184,13 +195,51 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   return (phil_obj,num_sub)
 
 if __name__ == '__main__':
+    ### test past
+    '''
     start = time.time()
     test_files = ["6d9h.pdb","5k7l.pdb","5vms.pdb","5vm7.pdb","6gdg.pdb","5kmg.pdb","5owx.pdb"]
+    dic_per = {}
     for pdb_file in test_files:
       print (pdb_file,"*"*50)
       pdb_inp = iotbx.pdb.input(pdb_file)
       hierarchy = homology.get_hierarchy(pdb_inp)
-      prepare_hydrogen_restraints(hierarchy,pdb_id=pdb_file[:4])
+      p = prepare_hydrogen_restraints(hierarchy,pdb_id=pdb_file[:4])
+      dic_per[pdb_file[:4]] = p
+    easy_pickle.dump("ss-percent.pkl", dic_per)
     end = time.time()
     time_cost = (end - start)
     print ("it cost % seconds" % time_cost)
+    percent = easy_pickle.load("ss-percent.pkl")
+    for key,value in percent.items():
+      print (key,value)
+    '''
+    start = time.time()
+    dic_per = {}
+    files = easy_pickle.load("cryo-EM_3_6_filename.pkl")
+    i=0
+    for pdb_file in files:
+      i = i+1
+      print(i,"   ",pdb_file, "*" * 50)
+      pdb_id = os.path.basename(pdb_file)[3:7]
+      pdb_inp = iotbx.pdb.input(pdb_file)
+      hierarchy = homology.get_hierarchy(pdb_inp)
+      p=False
+      try:
+        p = prepare_hydrogen_restraints(hierarchy, pdb_id=pdb_id)
+        if p:
+          dic_per[pdb_file[:4]] = p
+      except Exception,e:
+        print (e)
+    easy_pickle.dump("ss-percent_3_6.pkl", dic_per)
+    percent = easy_pickle.load("ss-percent_3_6.pkl")
+    for key, value in percent.items():
+      print(key, value)
+    end = time.time()
+    time_cost = (end - start)
+    print("it cost % seconds" % time_cost)
+
+
+
+
+
