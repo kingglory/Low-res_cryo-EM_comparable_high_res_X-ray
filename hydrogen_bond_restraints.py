@@ -30,12 +30,11 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   hierarchy_new = pdb_inp.construct_hierarchy()
   return hierarchy_new
 
-def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=False,SS_percent=True):
+def prepare_hydrogen_restraints(hierarchy,pdb_id,fetch_pdb=False,dump_phil_files=False,SS_percent=True):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
   if (hierarchy is not None):
     he_h = add_hydrogen_for_hierarchy(hierarchy)
-    #print (dir(he_h))
     atoms = he_h.atoms()
     atom_total = atoms.size()
     phils = "a"
@@ -50,20 +49,31 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=False,SS_percen
         pdb_code = r.pdb_code.lower()
         chain_id = r.chain_id.lower()
         match_info = pdb_id+"_"+chain.id.lower()+"_"+pdb_code+"_"+chain_id
-        easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
-        pdb_inp = iotbx.pdb.input(pdb_code + ".pdb")
-        data_type_X = pdb_inp.get_experiment_type()
-        data_resolution = pdb_inp.resolution()
-        #if data_resolution < 2.0:continue
-        if data_type_X != "X-RAY DIFFRACTION": continue
-        # there are two conformers in chian B 233 5kdo.pdb,
-        # so cann't keep only one conformer situation in hierarchy
-        easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code+".pdb"))
-        pdb_inp = iotbx.pdb.input(pdb_code + ".pdb_modified.pdb")
+        if fetch_pdb == True:
+          easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
+          pdb_inp = iotbx.pdb.input(pdb_code + ".pdb")
+          data_type_X = pdb_inp.get_experiment_type()
+          data_resolution = pdb_inp.resolution()
+          # if data_resolution < 2.0:continue
+          if data_type_X != "X-RAY DIFFRACTION": continue
+          # there are two conformers in chian B 233 5kdo.pdb,
+          # so cann't keep only one conformer situation in hierarchy
+          easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code + ".pdb"))
+          pdb_inp = iotbx.pdb.input(pdb_code + ".pdb_modified.pdb")
+        else:
+          pdb_file_local = "/home/wangwensong/PDB/pdb/%s"%pdb_code[1:3] + "/pdb%s"%pdb_code + ".ent.gz"
+          print (pdb_file_local)
+          #if not os.path.exists(pdb_file_local): continue
+          pdb_inp = iotbx.pdb.input(pdb_file_local)
+          data_type_X = pdb_inp.get_experiment_type()
+          data_resolution = pdb_inp.resolution()
+          # if data_resolution < 2.0:continue
+          if data_type_X != "X-RAY DIFFRACTION": continue
+          easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_file_local))
+          pdb_inp = iotbx.pdb.input("pdb"+pdb_code + ".ent.gz_modified.pdb")
         hx = pdb_inp.construct_hierarchy()
         sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
         hx = hx.select(sel_x)
-        #print (type(hx),dir(hx))
         chain_E = chain
         chain_X = (hx.only_chain())
         hx_h = add_hydrogen_for_hierarchy(hx)
@@ -72,9 +82,7 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,dump_phil_files=False,SS_percen
         if num_sub == 0: continue
         num_sum = num_sum + num_sub
         phils = phils + phil_obj
-        easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.pdb"))
-        easy_run.call("rm -r {0}".format(pdb_code + ".pdb_modified.cif"))
-        easy_run.call("rm -r {0}".format(pdb_code + ".pdb"))
+        easy_run.call("rm -f {0}".format("*"+pdb_code + "*"))
         #phil_result[match_info] = phil_obj
     if dump_phil_files==True:
       phils=phils[1:]
@@ -116,12 +124,6 @@ def dump_phil_files(phil_result,for_phenix_refine=True):
 def align_tow_chain(chain_E,chain_X,str_chain_X,
               distance_ideal=None, sigma_dist=0.1,angle_ideal = None,
               sigma_angle=2, use_actual=True):
-  #print (type(chain_E),type(chain_X))
-  #
-
-
-
-  int (dir(chain_X))
   se = chain_E.as_padded_sequence()
   sx = chain_X.as_padded_sequence()
   align = mmtbx.alignment.align(
@@ -144,9 +146,8 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
   result = mmtbx.nci.hbond.find(model=model).get_result()
   num_sub = 0
   for r in reses_E:
-    if int(r.resseq.strip())-1 in i_seqs:
+    if (int(r.resseq.strip())-1) in i_seqs:
       num_sub = num_sub + r.atoms_size()
-      #print (r.atoms_size(),r.resname,r.resseq,chain_E_id)
   f = "chain %s and resseq %s and name %s"
   top = "a"
   for r in result:
