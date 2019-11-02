@@ -30,10 +30,11 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   hierarchy_new = pdb_inp.construct_hierarchy()
   return hierarchy_new
 
-def prepare_hydrogen_restraints(hierarchy,pdb_id,fetch_pdb=False,dump_phil_files=False,SS_percent=True):
+def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
+                                fetch_pdb=False,dump_phil_files=False,SS_percent=True):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
-  if (hierarchy is not None):
+  if hierarchy_pair == None:
     he_h = add_hydrogen_for_hierarchy(hierarchy)
     atoms = he_h.atoms()
     atom_total = atoms.size()
@@ -48,7 +49,7 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,fetch_pdb=False,dump_phil_files
       for r in res :
         pdb_code = r.pdb_code.lower()
         chain_id = r.chain_id.lower()
-        match_info = pdb_id+"_"+chain.id.lower()+"_"+pdb_code+"_"+chain_id
+        #match_info = pdb_id+"_"+chain.id.lower()+"_"+pdb_code+"_"+chain_id
         if fetch_pdb == True:
           easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
           pdb_inp = iotbx.pdb.input(pdb_code + ".pdb")
@@ -89,14 +90,35 @@ def prepare_hydrogen_restraints(hierarchy,pdb_id,fetch_pdb=False,dump_phil_files
       dump_phil_file(phils,pdb_id)
     if SS_percent==True:
       p = (float('%.4f'%(float(num_sum) /atom_total)))*100
-  easy_run.call("rm -r {0}".format("hbond.eff"))
-  easy_run.call("rm -r {0}".format("myprotein.fasta"))
+  if hierarchy_pair is not None:
+    he_h = add_hydrogen_for_hierarchy(hierarchy)
+    atoms = he_h.atoms()
+    atom_total = atoms.size()
+    for chain in hierarchy.chains():
+      if not chain.is_protein(): continue
+      chain_E = chain
+      sel_x = hierarchy_pair .atom_selection_cache().selection("protein")
+      hx = hierarchy_pair .select(sel_x)
+      chain_X = (hx.only_chain())
+      hx_h = add_hydrogen_for_hierarchy(hx)
+      (phil_obj, num_sub) = align_tow_chain(chain_E, chain_X, hx_h.as_pdb_string())
+      if phil_obj is None: continue
+      if num_sub == 0: continue
+      dump_phil_file(phil_obj, pdb_id="A")
+      p = (float('%.4f' % (float(num_sub) / atom_total))) * 100
+      print("\nRestraint file is B.eff; ")
+      print("Percentage of B pdb atoms that have a match in A pdb file is :{0}".format(p))
+  easy_run.call("rm -f {0}".format("*modified*"))
+  if os.path.exists("hbond.eff"):
+    easy_run.call("rm -r {0}".format("hbond.eff"))
+  if os.path.exists("myprotein.fasta"):
+    easy_run.call("rm -r {0}".format("myprotein.fasta"))
   return (p)
 
 def dump_phil_file(phils,pdb_id,for_phenix_refine=True):
   top = """refinement{
-      geometry_restraints.edits{
-        %s
+  geometry_restraints.edits{
+    %s
       }
     }
         """
@@ -143,7 +165,8 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
     model_input=pdb_inp,
     process_input=True,
     log=null_out())
-  result = mmtbx.nci.hbond.find(model=model).get_result()
+  #print ((mmtbx.nci.hbond.find(model=model).result))
+  result = mmtbx.nci.hbond.find(model=model).result
   num_sub = 0
   for r in reses_E:
     if (int(r.resseq.strip())-1) in i_seqs:
@@ -192,12 +215,12 @@ def align_tow_chain(chain_E,chain_X,str_chain_X,
     base = dis + ang
     top = top + base
   phil_obj = top[1:]
-  #print (phil_obj)
+  print (phil_obj)
   return (phil_obj,num_sub)
 
 if __name__ == '__main__':
     ### test past
-    '''
+
     start = time.time()
     test_files = ["6d9h.pdb","5k7l.pdb","5vms.pdb","5vm7.pdb","6gdg.pdb","5kmg.pdb","5owx.pdb"]
     dic_per = {}
@@ -239,7 +262,7 @@ if __name__ == '__main__':
     end = time.time()
     time_cost = (end - start)
     print("it cost % seconds" % time_cost)
-
+    '''
 
 
 
