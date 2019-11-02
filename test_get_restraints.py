@@ -1,22 +1,12 @@
 from __future__ import absolute_import, division, print_function
-import os
 import time
-import mmtbx
 import iotbx.pdb
 import iotbx.phil
-import mmtbx.model
-import mmtbx.alignment
 import iotbx.pdb.fetch
 from hydrogen_bond_restraints import prepare_hydrogen_restraints
-from mmtbx.nci import hbond
 from libtbx import easy_run
-from libtbx import easy_pickle
-from libtbx.utils import Sorry
-from libtbx.utils import null_out
 from phenix.programs import homology
 import iotbx.bioinformatics.pdb_info
-from libtbx.test_utils import approx_equal
-from mmtbx.utils import run_reduce_with_timeout
 
 
 def test_0():
