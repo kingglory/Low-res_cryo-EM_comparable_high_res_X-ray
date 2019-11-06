@@ -35,6 +35,7 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
   if hierarchy_pair == None:
+    print (dir(hierarchy))
     he_h = add_hydrogen_for_hierarchy(hierarchy)
     atoms = he_h.atoms()
     atom_total = atoms.size()
@@ -68,7 +69,8 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
           pdb_inp = iotbx.pdb.input(pdb_file_local)
           data_type_X = pdb_inp.get_experiment_type()
           data_resolution = pdb_inp.resolution()
-          # if data_resolution < 2.0:continue
+          if data_resolution > 2.0:continue
+          print (data_resolution,"8"*50)
           if data_type_X != "X-RAY DIFFRACTION": continue
           easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_file_local))
           pdb_inp = iotbx.pdb.input("pdb"+pdb_code + ".ent.gz_modified.pdb")
@@ -127,12 +129,25 @@ def dump_phil_file(phils,pdb_id,for_phenix_refine=True):
   with open(file_name, 'w') as fileobject:
     fileobject.write(top_str)
 
-
+def as_pymol(model,prefix=None):
+  pdb_file_name = "%s.pdb"%prefix
+  with open(pdb_file_name, "w") as of:
+    print(model.model_as_pdb(), file=of)
+  with open("%s.pml"%prefix, "w") as of:
+    print("load", "/".join([os.getcwd(), pdb_file_name]), file=of)
+    for r in mmtbx.nci.hbond.find(model=model).result:
+      if(str(r.symop) != "x,y,z"): continue
+      ai = r.atom_H
+      aj = r.atom_A
+      one = "chain %s and resi %s and name %s and alt '%s'"%(
+        ai.chain, ai.resseq, ai.name, ai.altloc)
+      two = "chain %s and resi %s and name %s and alt '%s'"%(
+        aj.chain, aj.resseq, aj.name, aj.altloc)
+      print("dist %s, %s"%(one, two), file=of)
 '''
 def dump_phil_files(phil_result,for_phenix_refine=True):
   top = """refinement{
     geometry_restraints.edits{
-      %s
     }
   }
       """

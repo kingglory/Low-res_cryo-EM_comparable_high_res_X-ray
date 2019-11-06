@@ -1,9 +1,12 @@
 from __future__ import absolute_import, division, print_function
 import time
+import mmtbx
 import iotbx.pdb
 import iotbx.phil
 import iotbx.pdb.fetch
+from libtbx.utils import null_out
 from hydrogen_bond_restraints import prepare_hydrogen_restraints
+from hydrogen_bond_restraints import as_pymol
 from libtbx import easy_run
 from phenix.programs import homology
 import iotbx.bioinformatics.pdb_info
@@ -16,6 +19,11 @@ def test_0():
   pdb_inp_A = iotbx.pdb.input("A.pdb_modified.pdb")
   h_A = homology.get_hierarchy(pdb_inp_A)
   h_B = homology.get_hierarchy(pdb_inp_B)
+  model = mmtbx.model.manager(
+    model_input=pdb_inp_A,
+    process_input=True,
+    log=null_out())
+  as_pymol(model, prefix="A")
   prepare_hydrogen_restraints(hierarchy=h_A,hierarchy_pair=h_B,pdb_id="A")
 
 
