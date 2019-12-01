@@ -6,6 +6,7 @@ whole_num_of_cryo_EM = 4040
 def exercise_0():
   f1= easy_pickle.load("ss-percent_3_6_high_res.pkl")
   f_1 = sorted(f1.items(),key=itemgetter(1),reverse=True)
+  print (f_1)
   labels = ["matching","unmatching"]
   X = [len(f_1),whole_num_of_cryo_EM-len(f_1)]
   fig = plt.figure()
@@ -56,6 +57,7 @@ def exercise_2():
 def exercise_3():
   f4= easy_pickle.load("ss-percent_all.pkl")
   f_4 = sorted(f4.items(), key=itemgetter(1), reverse=True)
+  #print (f_4)
   labels = ["matching", "unmatching"]
   X = [len(f_4), whole_num_of_cryo_EM - len(f_4)]
   fig = plt.figure()
@@ -90,5 +92,5 @@ def exercise_3():
   plt.title("all_matching_percent")
   plt.show()
 
-exercise_3()
+exercise_0()
 #exercise_1()
