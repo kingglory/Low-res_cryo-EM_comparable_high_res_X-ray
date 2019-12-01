@@ -31,3 +31,10 @@ the corresponding chain from high-res model (or none, if no match found), the fu
      
      
      For stage 1 function: hydrogen_bond_restraints.py
+     For stage 2 :6h3n.pdb 100% matching high resolution
+                  5m6s.pdb 100%
+                  6n2p.pdb 100%
+                  6h3l.pdb 100%
+                  601m.pdb 97.86%
+                  601l.pdb 97.64%
+                  6r93.pdb 95.08%
