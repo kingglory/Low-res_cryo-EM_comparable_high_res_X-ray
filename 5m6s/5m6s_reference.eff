@@ -1,0 +1,11 @@
+reference_model {
+  enabled = True
+  use_starting_model_as_reference = True
+  reference_group {
+    reference = chain A
+    selection = chain A
+    file_name = 1u5p.pdb
+    }
+  }
+
+
