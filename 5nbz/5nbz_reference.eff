@@ -1,0 +1,68 @@
+reference_model {
+    enabled = True
+    use_starting_model_as_reference = True
+    reference_group {
+      reference = chain A
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain B
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain C
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain D
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain E
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain F
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain G
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain H
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain I
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain J
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain K
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    reference_group {
+      reference = chain L
+      selection = chain A
+      file_name = 4e29.pdb
+      }
+    }
+output {
+  file_name_prefix = "5nbz_reference_real_space_refined"
+  model_format = *pdb *mmcif
+}
