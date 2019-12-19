@@ -1,0 +1,1364 @@
+refinement{
+  geometry_restraints.edits{
+    bond {
+            atom_selection_1 = chain I and resseq 25 and name  H  
+            atom_selection_2 = chain I and resseq 79 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 1.925014
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 79 and name  O  
+            atom_selection_2 = chain I and resseq 25 and name  H  
+            atom_selection_3 = chain I and resseq 25 and name  N  
+            angle_ideal = 171.156251
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 80 and name  H  
+            atom_selection_2 = chain I and resseq 88 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.001726
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 88 and name  O  
+            atom_selection_2 = chain I and resseq 80 and name  H  
+            atom_selection_3 = chain I and resseq 80 and name  N  
+            angle_ideal = 170.891523
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 46 and name  H  
+            atom_selection_2 = chain I and resseq 42 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.084357
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 42 and name  O  
+            atom_selection_2 = chain I and resseq 46 and name  H  
+            atom_selection_3 = chain I and resseq 46 and name  N  
+            angle_ideal = 157.206723
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 103 and name  H  
+            atom_selection_2 = chain I and resseq 99 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.068059
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 99 and name  O  
+            atom_selection_2 = chain I and resseq 103 and name  H  
+            atom_selection_3 = chain I and resseq 103 and name  N  
+            angle_ideal = 157.699819
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 47 and name  H  
+            atom_selection_2 = chain I and resseq 43 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.371130
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 43 and name  O  
+            atom_selection_2 = chain I and resseq 47 and name  H  
+            atom_selection_3 = chain I and resseq 47 and name  N  
+            angle_ideal = 154.900386
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 45 and name  H  
+            atom_selection_2 = chain I and resseq 41 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.114383
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 41 and name  O  
+            atom_selection_2 = chain I and resseq 45 and name  H  
+            atom_selection_3 = chain I and resseq 45 and name  N  
+            angle_ideal = 162.635649
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 104 and name  H  
+            atom_selection_2 = chain I and resseq 100 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.058281
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 100 and name  O  
+            atom_selection_2 = chain I and resseq 104 and name  H  
+            atom_selection_3 = chain I and resseq 104 and name  N  
+            angle_ideal = 162.542129
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 105 and name  H  
+            atom_selection_2 = chain I and resseq 101 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.377691
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 101 and name  O  
+            atom_selection_2 = chain I and resseq 105 and name  H  
+            atom_selection_3 = chain I and resseq 105 and name  N  
+            angle_ideal = 158.697670
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 9 and name  H  
+            atom_selection_2 = chain I and resseq 63 and name  OD1
+            symmetry_operation = x,y,z
+            distance_ideal = 2.204048
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 63 and name  OD1
+            atom_selection_2 = chain I and resseq 9 and name  H  
+            atom_selection_3 = chain I and resseq 9 and name  N  
+            angle_ideal = 144.103232
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 26 and name  H  
+            atom_selection_2 = chain I and resseq 56 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.009150
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 56 and name  O  
+            atom_selection_2 = chain I and resseq 26 and name  H  
+            atom_selection_3 = chain I and resseq 26 and name  N  
+            angle_ideal = 164.093437
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 81 and name  H  
+            atom_selection_2 = chain I and resseq 23 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 1.966095
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 23 and name  O  
+            atom_selection_2 = chain I and resseq 81 and name  H  
+            atom_selection_3 = chain I and resseq 81 and name  N  
+            angle_ideal = 165.985886
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 87 and name  H  
+            atom_selection_2 = chain I and resseq 80 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 1.892443
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 80 and name  O  
+            atom_selection_2 = chain I and resseq 87 and name  H  
+            atom_selection_3 = chain I and resseq 87 and name  N  
+            angle_ideal = 172.413496
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 88 and name  H  
+            atom_selection_2 = chain I and resseq 80 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.517883
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 80 and name  O  
+            atom_selection_2 = chain I and resseq 88 and name  H  
+            atom_selection_3 = chain I and resseq 88 and name  N  
+            angle_ideal = 141.145542
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 5 and name  H  
+            atom_selection_2 = chain I and resseq 55 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.191110
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 55 and name  O  
+            atom_selection_2 = chain I and resseq 5 and name  H  
+            atom_selection_3 = chain I and resseq 5 and name  N  
+            angle_ideal = 159.473714
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 56 and name  H  
+            atom_selection_2 = chain I and resseq 24 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.004223
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 24 and name  O  
+            atom_selection_2 = chain I and resseq 56 and name  H  
+            atom_selection_3 = chain I and resseq 56 and name  N  
+            angle_ideal = 161.874827
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 24 and name  H  
+            atom_selection_2 = chain I and resseq 54 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.004774
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 54 and name  O  
+            atom_selection_2 = chain I and resseq 24 and name  H  
+            atom_selection_3 = chain I and resseq 24 and name  N  
+            angle_ideal = 156.775898
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 24 and name  H  
+            atom_selection_2 = chain I and resseq 54 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.004774
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 54 and name  O  
+            atom_selection_2 = chain I and resseq 24 and name  H  
+            atom_selection_3 = chain I and resseq 24 and name  N  
+            angle_ideal = 156.775898
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 107 and name  H  
+            atom_selection_2 = chain I and resseq 103 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 1.995161
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 103 and name  O  
+            atom_selection_2 = chain I and resseq 107 and name  H  
+            atom_selection_3 = chain I and resseq 107 and name  N  
+            angle_ideal = 164.125597
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 47 and name  H  
+            atom_selection_2 = chain I and resseq 44 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.687054
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 44 and name  O  
+            atom_selection_2 = chain I and resseq 47 and name  H  
+            atom_selection_3 = chain I and resseq 47 and name  N  
+            angle_ideal = 120.761360
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 48 and name  H  
+            atom_selection_2 = chain I and resseq 44 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.035632
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 44 and name  O  
+            atom_selection_2 = chain I and resseq 48 and name  H  
+            atom_selection_3 = chain I and resseq 48 and name  N  
+            angle_ideal = 168.143623
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 49 and name  H  
+            atom_selection_2 = chain I and resseq 45 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.007638
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 45 and name  O  
+            atom_selection_2 = chain I and resseq 49 and name  H  
+            atom_selection_3 = chain I and resseq 49 and name  N  
+            angle_ideal = 156.008333
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 100 and name  HZ2
+            atom_selection_2 = chain I and resseq 49 and name  OH 
+            symmetry_operation = x,y,z
+            distance_ideal = 2.619928
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 49 and name  OH 
+            atom_selection_2 = chain I and resseq 100 and name  HZ2
+            atom_selection_3 = chain I and resseq 100 and name  NZ 
+            angle_ideal = 122.289710
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 11 and name  H  
+            atom_selection_2 = chain I and resseq 8 and name  OG1
+            symmetry_operation = x,y,z
+            distance_ideal = 2.008823
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 8 and name  OG1
+            atom_selection_2 = chain I and resseq 11 and name  H  
+            atom_selection_3 = chain I and resseq 11 and name  N  
+            angle_ideal = 165.488555
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 12 and name  H  
+            atom_selection_2 = chain I and resseq 8 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.086884
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 8 and name  O  
+            atom_selection_2 = chain I and resseq 12 and name  H  
+            atom_selection_3 = chain I and resseq 12 and name  N  
+            angle_ideal = 157.829654
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 8 and name  H  
+            atom_selection_2 = chain I and resseq 11 and name  OG 
+            symmetry_operation = x,y,z
+            distance_ideal = 2.096978
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 11 and name  OG 
+            atom_selection_2 = chain I and resseq 8 and name  H  
+            atom_selection_3 = chain I and resseq 8 and name  N  
+            angle_ideal = 169.240167
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 57 and name  H  
+            atom_selection_2 = chain I and resseq 5 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.042717
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 5 and name  O  
+            atom_selection_2 = chain I and resseq 57 and name  H  
+            atom_selection_3 = chain I and resseq 57 and name  N  
+            angle_ideal = 153.375082
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 7 and name  H  
+            atom_selection_2 = chain I and resseq 57 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.005397
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 57 and name  O  
+            atom_selection_2 = chain I and resseq 7 and name  H  
+            atom_selection_3 = chain I and resseq 7 and name  N  
+            angle_ideal = 168.902964
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 82 and name  H  
+            atom_selection_2 = chain I and resseq 85 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.106479
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 85 and name  O  
+            atom_selection_2 = chain I and resseq 82 and name  H  
+            atom_selection_3 = chain I and resseq 82 and name  N  
+            angle_ideal = 152.594412
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 5 and name  H  
+            atom_selection_2 = chain I and resseq 55 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.191110
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 55 and name  O  
+            atom_selection_2 = chain I and resseq 5 and name  H  
+            atom_selection_3 = chain I and resseq 5 and name  N  
+            angle_ideal = 159.473714
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 83 and name  H  
+            atom_selection_2 = chain I and resseq 21 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.293135
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 21 and name  O  
+            atom_selection_2 = chain I and resseq 83 and name  H  
+            atom_selection_3 = chain I and resseq 83 and name  N  
+            angle_ideal = 158.170107
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 23 and name  H  
+            atom_selection_2 = chain I and resseq 81 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.126172
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 81 and name  O  
+            atom_selection_2 = chain I and resseq 23 and name  H  
+            atom_selection_3 = chain I and resseq 23 and name  N  
+            angle_ideal = 155.272846
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 82 and name  H  
+            atom_selection_2 = chain I and resseq 85 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.106479
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 85 and name  O  
+            atom_selection_2 = chain I and resseq 82 and name  H  
+            atom_selection_3 = chain I and resseq 82 and name  N  
+            angle_ideal = 152.594412
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 54 and name  H  
+            atom_selection_2 = chain I and resseq 22 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.201979
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 22 and name  O  
+            atom_selection_2 = chain I and resseq 54 and name  H  
+            atom_selection_3 = chain I and resseq 54 and name  N  
+            angle_ideal = 166.462539
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 54 and name  H  
+            atom_selection_2 = chain I and resseq 22 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.201979
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 22 and name  O  
+            atom_selection_2 = chain I and resseq 54 and name  H  
+            atom_selection_3 = chain I and resseq 54 and name  N  
+            angle_ideal = 166.462539
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 82 and name  HZ1
+            atom_selection_2 = chain I and resseq 107 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.898926
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 107 and name  O  
+            atom_selection_2 = chain I and resseq 82 and name  HZ1
+            atom_selection_3 = chain I and resseq 82 and name  NZ 
+            angle_ideal = 144.553044
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 50 and name  H  
+            atom_selection_2 = chain I and resseq 47 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.461508
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 47 and name  O  
+            atom_selection_2 = chain I and resseq 50 and name  H  
+            atom_selection_3 = chain I and resseq 50 and name  N  
+            angle_ideal = 170.781637
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 52 and name  H  
+            atom_selection_2 = chain I and resseq 49 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 1.968251
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 49 and name  O  
+            atom_selection_2 = chain I and resseq 52 and name  H  
+            atom_selection_3 = chain I and resseq 52 and name  N  
+            angle_ideal = 153.488557
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 53 and name  H  
+            atom_selection_2 = chain I and resseq 49 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.224759
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 49 and name  O  
+            atom_selection_2 = chain I and resseq 53 and name  H  
+            atom_selection_3 = chain I and resseq 53 and name  N  
+            angle_ideal = 135.647334
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 13 and name  H  
+            atom_selection_2 = chain I and resseq 10 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.372304
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 10 and name  O  
+            atom_selection_2 = chain I and resseq 13 and name  H  
+            atom_selection_3 = chain I and resseq 13 and name  N  
+            angle_ideal = 145.651352
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 17 and name  H  
+            atom_selection_2 = chain I and resseq 12 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.401566
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 12 and name  O  
+            atom_selection_2 = chain I and resseq 17 and name  H  
+            atom_selection_3 = chain I and resseq 17 and name  N  
+            angle_ideal = 154.422136
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 16 and name  H  
+            atom_selection_2 = chain I and resseq 12 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.268682
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 12 and name  O  
+            atom_selection_2 = chain I and resseq 16 and name  H  
+            atom_selection_3 = chain I and resseq 16 and name  N  
+            angle_ideal = 157.712997
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 13 and name  H  
+            atom_selection_2 = chain I and resseq 10 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.372304
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 10 and name  O  
+            atom_selection_2 = chain I and resseq 13 and name  H  
+            atom_selection_3 = chain I and resseq 13 and name  N  
+            angle_ideal = 145.651352
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 18 and name  H  
+            atom_selection_2 = chain I and resseq 14 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.221874
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 14 and name  O  
+            atom_selection_2 = chain I and resseq 18 and name  H  
+            atom_selection_3 = chain I and resseq 18 and name  N  
+            angle_ideal = 158.986889
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 14 and name  H  
+            atom_selection_2 = chain I and resseq 11 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.217835
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 11 and name  O  
+            atom_selection_2 = chain I and resseq 14 and name  H  
+            atom_selection_3 = chain I and resseq 14 and name  N  
+            angle_ideal = 154.142774
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 15 and name  H  
+            atom_selection_2 = chain I and resseq 11 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 1.951747
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 11 and name  O  
+            atom_selection_2 = chain I and resseq 15 and name  H  
+            atom_selection_3 = chain I and resseq 15 and name  N  
+            angle_ideal = 160.888519
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 14 and name  H  
+            atom_selection_2 = chain I and resseq 11 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.217835
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 11 and name  O  
+            atom_selection_2 = chain I and resseq 14 and name  H  
+            atom_selection_3 = chain I and resseq 14 and name  N  
+            angle_ideal = 154.142774
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 19 and name  H  
+            atom_selection_2 = chain I and resseq 16 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.450245
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 16 and name  O  
+            atom_selection_2 = chain I and resseq 19 and name  H  
+            atom_selection_3 = chain I and resseq 19 and name  N  
+            angle_ideal = 170.543277
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 85 and name  H  
+            atom_selection_2 = chain I and resseq 82 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.285447
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 82 and name  O  
+            atom_selection_2 = chain I and resseq 85 and name  H  
+            atom_selection_3 = chain I and resseq 85 and name  N  
+            angle_ideal = 164.844792
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 21 and name  H  
+            atom_selection_2 = chain I and resseq 83 and name  OD1
+            symmetry_operation = x,y,z
+            distance_ideal = 2.125213
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 83 and name  OD1
+            atom_selection_2 = chain I and resseq 21 and name  H  
+            atom_selection_3 = chain I and resseq 21 and name  N  
+            angle_ideal = 154.333530
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 35 and name  H  
+            atom_selection_2 = chain I and resseq 32 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.735067
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 32 and name  O  
+            atom_selection_2 = chain I and resseq 35 and name  H  
+            atom_selection_3 = chain I and resseq 35 and name  N  
+            angle_ideal = 120.196038
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 37 and name  H  
+            atom_selection_2 = chain I and resseq 33 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.265511
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 33 and name  O  
+            atom_selection_2 = chain I and resseq 37 and name  H  
+            atom_selection_3 = chain I and resseq 37 and name  N  
+            angle_ideal = 149.297182
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 31 and name  HE1
+            atom_selection_2 = chain I and resseq 61 and name  OD2
+            symmetry_operation = x,y,z
+            distance_ideal = 2.512376
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 61 and name  OD2
+            atom_selection_2 = chain I and resseq 31 and name  HE1
+            atom_selection_3 = chain I and resseq 31 and name  NE1
+            angle_ideal = 126.877046
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 35 and name  H  
+            atom_selection_2 = chain I and resseq 32 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.735067
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 32 and name  O  
+            atom_selection_2 = chain I and resseq 35 and name  H  
+            atom_selection_3 = chain I and resseq 35 and name  N  
+            angle_ideal = 120.196038
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 36 and name  H  
+            atom_selection_2 = chain I and resseq 32 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.406070
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 32 and name  O  
+            atom_selection_2 = chain I and resseq 36 and name  H  
+            atom_selection_3 = chain I and resseq 36 and name  N  
+            angle_ideal = 154.197934
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 92 and name  H  
+            atom_selection_2 = chain I and resseq 76 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.041111
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 76 and name  O  
+            atom_selection_2 = chain I and resseq 92 and name  H  
+            atom_selection_3 = chain I and resseq 92 and name  N  
+            angle_ideal = 159.783438
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 36 and name  H  
+            atom_selection_2 = chain I and resseq 32 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.406070
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 32 and name  O  
+            atom_selection_2 = chain I and resseq 36 and name  H  
+            atom_selection_3 = chain I and resseq 36 and name  N  
+            angle_ideal = 154.197934
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 39 and name  H  
+            atom_selection_2 = chain I and resseq 35 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.965904
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 35 and name  O  
+            atom_selection_2 = chain I and resseq 39 and name  H  
+            atom_selection_3 = chain I and resseq 39 and name  N  
+            angle_ideal = 120.042753
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 38 and name  H  
+            atom_selection_2 = chain I and resseq 35 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.711394
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 35 and name  O  
+            atom_selection_2 = chain I and resseq 38 and name  H  
+            atom_selection_3 = chain I and resseq 38 and name  N  
+            angle_ideal = 133.716710
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 39 and name  H  
+            atom_selection_2 = chain I and resseq 36 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.361472
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 36 and name  O  
+            atom_selection_2 = chain I and resseq 39 and name  H  
+            atom_selection_3 = chain I and resseq 39 and name  N  
+            angle_ideal = 158.068760
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 38 and name  H  
+            atom_selection_2 = chain I and resseq 34 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.428822
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 34 and name  O  
+            atom_selection_2 = chain I and resseq 38 and name  H  
+            atom_selection_3 = chain I and resseq 38 and name  N  
+            angle_ideal = 144.643236
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 95 and name  H  
+            atom_selection_2 = chain I and resseq 98 and name  OE1
+            symmetry_operation = x,y,z
+            distance_ideal = 2.164178
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 98 and name  OE1
+            atom_selection_2 = chain I and resseq 95 and name  H  
+            atom_selection_3 = chain I and resseq 95 and name  N  
+            angle_ideal = 162.244088
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 98 and name  H  
+            atom_selection_2 = chain I and resseq 95 and name  OG 
+            symmetry_operation = x,y,z
+            distance_ideal = 2.224441
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 95 and name  OG 
+            atom_selection_2 = chain I and resseq 98 and name  H  
+            atom_selection_3 = chain I and resseq 98 and name  N  
+            angle_ideal = 168.411014
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 32 and name  H  
+            atom_selection_2 = chain I and resseq 29 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.232144
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 29 and name  O  
+            atom_selection_2 = chain I and resseq 32 and name  H  
+            atom_selection_3 = chain I and resseq 32 and name  N  
+            angle_ideal = 168.027321
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 60 and name  H  
+            atom_selection_2 = chain I and resseq 28 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.058277
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 28 and name  O  
+            atom_selection_2 = chain I and resseq 60 and name  H  
+            atom_selection_3 = chain I and resseq 60 and name  N  
+            angle_ideal = 158.334976
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 77 and name  H  
+            atom_selection_2 = chain I and resseq 27 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.722568
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 27 and name  O  
+            atom_selection_2 = chain I and resseq 77 and name  H  
+            atom_selection_3 = chain I and resseq 77 and name  N  
+            angle_ideal = 155.129628
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 77 and name  H  
+            atom_selection_2 = chain I and resseq 27 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.722568
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 27 and name  O  
+            atom_selection_2 = chain I and resseq 77 and name  H  
+            atom_selection_3 = chain I and resseq 77 and name  N  
+            angle_ideal = 155.129628
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 90 and name  H  
+            atom_selection_2 = chain I and resseq 78 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.103539
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 78 and name  O  
+            atom_selection_2 = chain I and resseq 90 and name  H  
+            atom_selection_3 = chain I and resseq 90 and name  N  
+            angle_ideal = 158.508577
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 78 and name  H  
+            atom_selection_2 = chain I and resseq 90 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 1.965701
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 90 and name  O  
+            atom_selection_2 = chain I and resseq 78 and name  H  
+            atom_selection_3 = chain I and resseq 78 and name  N  
+            angle_ideal = 174.446364
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 43 and name  H  
+            atom_selection_2 = chain I and resseq 39 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.267395
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 39 and name  O  
+            atom_selection_2 = chain I and resseq 43 and name  H  
+            atom_selection_3 = chain I and resseq 43 and name  N  
+            angle_ideal = 153.709238
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 42 and name  H  
+            atom_selection_2 = chain I and resseq 38 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.228070
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 38 and name  O  
+            atom_selection_2 = chain I and resseq 42 and name  H  
+            atom_selection_3 = chain I and resseq 42 and name  N  
+            angle_ideal = 157.382071
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 44 and name  H  
+            atom_selection_2 = chain I and resseq 40 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.328245
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 40 and name  O  
+            atom_selection_2 = chain I and resseq 44 and name  H  
+            atom_selection_3 = chain I and resseq 44 and name  N  
+            angle_ideal = 158.798694
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 45 and name  H  
+            atom_selection_2 = chain I and resseq 41 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.114383
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 41 and name  O  
+            atom_selection_2 = chain I and resseq 45 and name  H  
+            atom_selection_3 = chain I and resseq 45 and name  N  
+            angle_ideal = 162.635649
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 99 and name  H  
+            atom_selection_2 = chain I and resseq 95 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 1.964858
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 95 and name  O  
+            atom_selection_2 = chain I and resseq 99 and name  H  
+            atom_selection_3 = chain I and resseq 99 and name  N  
+            angle_ideal = 160.254070
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 100 and name  H  
+            atom_selection_2 = chain I and resseq 96 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.118630
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 96 and name  O  
+            atom_selection_2 = chain I and resseq 100 and name  H  
+            atom_selection_3 = chain I and resseq 100 and name  N  
+            angle_ideal = 157.800722
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 101 and name  H  
+            atom_selection_2 = chain I and resseq 97 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.259282
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 97 and name  O  
+            atom_selection_2 = chain I and resseq 101 and name  H  
+            atom_selection_3 = chain I and resseq 101 and name  N  
+            angle_ideal = 155.445571
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 102 and name  H  
+            atom_selection_2 = chain I and resseq 98 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.078791
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 98 and name  O  
+            atom_selection_2 = chain I and resseq 102 and name  H  
+            atom_selection_3 = chain I and resseq 102 and name  N  
+            angle_ideal = 163.682983
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 65 and name  H  
+            atom_selection_2 = chain I and resseq 9 and name  OD2
+            symmetry_operation = x,y,z
+            distance_ideal = 1.995164
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 9 and name  OD2
+            atom_selection_2 = chain I and resseq 65 and name  H  
+            atom_selection_3 = chain I and resseq 65 and name  N  
+            angle_ideal = 163.044414
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 70 and name  H  
+            atom_selection_2 = chain I and resseq 67 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.251352
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 67 and name  O  
+            atom_selection_2 = chain I and resseq 70 and name  H  
+            atom_selection_3 = chain I and resseq 70 and name  N  
+            angle_ideal = 151.524724
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 72 and name  H  
+            atom_selection_2 = chain I and resseq 67 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.273727
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 67 and name  O  
+            atom_selection_2 = chain I and resseq 72 and name  H  
+            atom_selection_3 = chain I and resseq 72 and name  N  
+            angle_ideal = 175.341185
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 71 and name  H  
+            atom_selection_2 = chain I and resseq 68 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.318140
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 68 and name  O  
+            atom_selection_2 = chain I and resseq 71 and name  H  
+            atom_selection_3 = chain I and resseq 71 and name  N  
+            angle_ideal = 167.674003
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 61 and name  H  
+            atom_selection_2 = chain I and resseq 59 and name  OD1
+            symmetry_operation = x,y,z
+            distance_ideal = 2.294049
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 59 and name  OD1
+            atom_selection_2 = chain I and resseq 61 and name  H  
+            atom_selection_3 = chain I and resseq 61 and name  N  
+            angle_ideal = 144.345101
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 62 and name  H  
+            atom_selection_2 = chain I and resseq 59 and name  OD1
+            symmetry_operation = x,y,z
+            distance_ideal = 2.488586
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 59 and name  OD1
+            atom_selection_2 = chain I and resseq 62 and name  H  
+            atom_selection_3 = chain I and resseq 62 and name  N  
+            angle_ideal = 157.809864
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 62 and name  H  
+            atom_selection_2 = chain I and resseq 59 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.732556
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 59 and name  O  
+            atom_selection_2 = chain I and resseq 62 and name  H  
+            atom_selection_3 = chain I and resseq 62 and name  N  
+            angle_ideal = 122.990031
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 63 and name  H  
+            atom_selection_2 = chain I and resseq 59 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.382465
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 59 and name  O  
+            atom_selection_2 = chain I and resseq 63 and name  H  
+            atom_selection_3 = chain I and resseq 63 and name  N  
+            angle_ideal = 123.861152
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 63 and name HD22
+            atom_selection_2 = chain I and resseq 59 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.359250
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 59 and name  O  
+            atom_selection_2 = chain I and resseq 63 and name HD22
+            atom_selection_3 = chain I and resseq 63 and name  ND2
+            angle_ideal = 153.761151
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 58 and name  H  
+            atom_selection_2 = chain I and resseq 26 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.066719
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 26 and name  O  
+            atom_selection_2 = chain I and resseq 58 and name  H  
+            atom_selection_3 = chain I and resseq 58 and name  N  
+            angle_ideal = 161.433088
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 28 and name  H  
+            atom_selection_2 = chain I and resseq 58 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.294281
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 58 and name  O  
+            atom_selection_2 = chain I and resseq 28 and name  H  
+            atom_selection_3 = chain I and resseq 28 and name  N  
+            angle_ideal = 157.885755
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 27 and name  H  
+            atom_selection_2 = chain I and resseq 77 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.078319
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 77 and name  O  
+            atom_selection_2 = chain I and resseq 27 and name  H  
+            atom_selection_3 = chain I and resseq 27 and name  N  
+            angle_ideal = 177.625170
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 103 and name  H  
+            atom_selection_2 = chain I and resseq 99 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.068059
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 99 and name  O  
+            atom_selection_2 = chain I and resseq 103 and name  H  
+            atom_selection_3 = chain I and resseq 103 and name  N  
+            angle_ideal = 157.699819
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 105 and name  H  
+            atom_selection_2 = chain I and resseq 101 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.377691
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 101 and name  O  
+            atom_selection_2 = chain I and resseq 105 and name  H  
+            atom_selection_3 = chain I and resseq 105 and name  N  
+            angle_ideal = 158.697670
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 66 and name  H  
+            atom_selection_2 = chain I and resseq 9 and name  OD1
+            symmetry_operation = x,y,z
+            distance_ideal = 2.367862
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 9 and name  OD1
+            atom_selection_2 = chain I and resseq 66 and name  H  
+            atom_selection_3 = chain I and resseq 66 and name  N  
+            angle_ideal = 124.237889
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 9 and name  H  
+            atom_selection_2 = chain I and resseq 63 and name  OD1
+            symmetry_operation = x,y,z
+            distance_ideal = 2.204048
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 63 and name  OD1
+            atom_selection_2 = chain I and resseq 9 and name  H  
+            atom_selection_3 = chain I and resseq 9 and name  N  
+            angle_ideal = 144.103232
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 65 and name  H  
+            atom_selection_2 = chain I and resseq 9 and name  OD2
+            symmetry_operation = x,y,z
+            distance_ideal = 1.995164
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 9 and name  OD2
+            atom_selection_2 = chain I and resseq 65 and name  H  
+            atom_selection_3 = chain I and resseq 65 and name  N  
+            angle_ideal = 163.044414
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 69 and name  H  
+            atom_selection_2 = chain I and resseq 66 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.340754
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 66 and name  O  
+            atom_selection_2 = chain I and resseq 69 and name  H  
+            atom_selection_3 = chain I and resseq 69 and name  N  
+            angle_ideal = 133.452281
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 70 and name  H  
+            atom_selection_2 = chain I and resseq 66 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.968463
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 66 and name  O  
+            atom_selection_2 = chain I and resseq 70 and name  H  
+            atom_selection_3 = chain I and resseq 70 and name  N  
+            angle_ideal = 132.607873
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 79 and name  H  
+            atom_selection_2 = chain I and resseq 25 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.156665
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 25 and name  O  
+            atom_selection_2 = chain I and resseq 79 and name  H  
+            atom_selection_3 = chain I and resseq 79 and name  N  
+            angle_ideal = 158.695401
+            sigma = 5
+            }
+    bond {
+            atom_selection_1 = chain I and resseq 26 and name  H  
+            atom_selection_2 = chain I and resseq 56 and name  O  
+            symmetry_operation = x,y,z
+            distance_ideal = 2.009150
+            sigma = 0.05
+            }
+    angle {
+            atom_selection_1 = chain I and resseq 56 and name  O  
+            atom_selection_2 = chain I and resseq 26 and name  H  
+            atom_selection_3 = chain I and resseq 26 and name  N  
+            angle_ideal = 164.093437
+            sigma = 5
+            }
+    
+      }
+    }
+        

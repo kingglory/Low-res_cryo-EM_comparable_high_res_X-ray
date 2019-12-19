@@ -1,1 +1,2602 @@
-s
+5kmg.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/i4/pdb4i4t.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  4i4t.pdb_modified.pdb
+Output model file name:  4i4t.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/nq/pdb5nqu.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5nqu.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5nqu.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  5nqu.pdb_modified.pdb
+Output model file name:  5nqu.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/nr/pdb3nrx.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/3nrx.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/3nrx.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  3nrx.pdb_modified.pdb
+Output model file name:  3nrx.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+7720 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+5ni1.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/w7/pdb2w72.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/2w72.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/2w72.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  2w72.pdb_modified.pdb
+Output model file name:  2w72.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/w7/pdb2w72.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/2w72.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/2w72.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  2w72.pdb_modified.pdb
+Output model file name:  2w72.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/w7/pdb2w72.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/2w72.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/2w72.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  2w72.pdb_modified.pdb
+Output model file name:  2w72.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/w7/pdb2w72.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/2w72.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/2w72.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  2w72.pdb_modified.pdb
+Output model file name:  2w72.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+4297 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+5njg.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/hb/pdb6hbu.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/6hbu.pdb
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/hb/pdb6hbu.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/6hbu.pdb
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/ni/pdb5niv.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5niv.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5niv.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  5niv.pdb_modified.pdb
+Output model file name:  5niv.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/ni/pdb5niv.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5niv.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5niv.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  5niv.pdb_modified.pdb
+Output model file name:  5niv.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/ni/pdb5niv.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5niv.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5niv.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  5niv.pdb_modified.pdb
+Output model file name:  5niv.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/ni/pdb5niv.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5niv.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5niv.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  5niv.pdb_modified.pdb
+Output model file name:  5niv.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+3484 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+6e7c.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/i4/pdb4i4t.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  4i4t.pdb_modified.pdb
+Output model file name:  4i4t.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/i4/pdb4i4t.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  4i4t.pdb_modified.pdb
+Output model file name:  4i4t.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+3358 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+6gk3.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/k5/pdb1k5n.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  1k5n.pdb_modified.pdb
+Output model file name:  1k5n.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/k5/pdb1k5n.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  1k5n.pdb_modified.pdb
+Output model file name:  1k5n.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/k5/pdb1k5n.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  1k5n.pdb_modified.pdb
+Output model file name:  1k5n.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/k5/pdb1k5n.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  1k5n.pdb_modified.pdb
+Output model file name:  1k5n.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/k5/pdb1k5n.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  1k5n.pdb_modified.pdb
+Output model file name:  1k5n.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/k5/pdb1k5n.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  1k5n.pdb_modified.pdb
+Output model file name:  1k5n.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/k5/pdb1k5n.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  1k5n.pdb_modified.pdb
+Output model file name:  1k5n.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/k5/pdb1k5n.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1k5n.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  1k5n.pdb_modified.pdb
+Output model file name:  1k5n.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+4312 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+6n7w.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/x9/pdb1x9m.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/1x9m.pdb
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/hr/pdb5hr3.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5hr3.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5hr3.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  5hr3.pdb_modified.pdb
+Output model file name:  5hr3.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+790 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+6b0l.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/i4/pdb4i4t.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  4i4t.pdb_modified.pdb
+Output model file name:  4i4t.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/i4/pdb4i4t.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  4i4t.pdb_modified.pdb
+Output model file name:  4i4t.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/b0/pdb6b0i.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/6b0i.pdb
+3446 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+6b0i.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/i4/pdb4i4t.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  4i4t.pdb_modified.pdb
+Output model file name:  4i4t.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/b0/pdb6b0i.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/6b0i.pdb
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/i4/pdb4i4t.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  4i4t.pdb_modified.pdb
+Output model file name:  4i4t.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+3446 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+6cvn.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/nq/pdb5nqu.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5nqu.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5nqu.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  5nqu.pdb_modified.pdb
+Output model file name:  5nqu.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/i4/pdb4i4t.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/4i4t.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  4i4t.pdb_modified.pdb
+Output model file name:  4i4t.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/nq/pdb5nqu.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5nqu.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5nqu.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  5nqu.pdb_modified.pdb
+Output model file name:  5nqu.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/nw/pdb6nwp.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/6nwp.pdb
+9936 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+5vm7.pdb *@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/mn/pdb5mnt.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/5mnt.pdb
+Reading from local mirror:
+  /home/wangwensong/PDB/pdb/kq/pdb3kqj.ent.gz
+Model saved to /home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/3kqj.pdb
+-------------------------------------------------------------------------------
+phenix.pdbtools tools for PDB model manipulations.
+**************************************************
+Could not import the compiled Python-sander interface. Make sure you have the Python development libraries installed and that you have sourced amber.sh or amber.csh-------------------------------------------------------------------------------
+Complete set of parameters
+**************************
+model_file_name = "/home/wangwensong/PycharmProjects/Low-res_cryo-EM_comparable_high_res_X-ray/new_try_pdbs/3kqj.pdb"
+output {
+  file_name = None
+  format = *pdb *mmcif
+}
+modify {
+  remove = None
+  keep = None
+  put_into_box_with_buffer = None
+  selection = None
+  adp {
+    atom_selection = None
+    randomize = False
+    set_b_iso = None
+    convert_to_isotropic = False
+    convert_to_anisotropic = False
+    shift_b_iso = None
+    scale_adp = None
+  }
+  sites {
+    atom_selection = None
+    shake = None
+    switch_rotamers = max_distant min_distant exact_match fix_outliers
+    translate = 0 0 0
+    rotate = 0 0 0
+    euler_angle_convention = *xyz zyz
+  }
+  occupancies {
+    atom_selection = None
+    randomize = False
+    set = None
+  }
+  rotate_about_axis {
+    axis = None
+    angle = None
+    atom_selection = None
+  }
+  change_of_basis = None
+  renumber_residues = False
+  increment_resseq = None
+  truncate_to_polyala = False
+  truncate_to_polygly = False
+  remove_alt_confs = True
+  always_keep_one_conformer = False
+  set_chemical_element_simple_if_necessary = None
+  set_seg_id_to_chain_id = False
+  clear_seg_id = False
+  convert_semet_to_met = False
+  convert_met_to_semet = False
+  rename_chain_id {
+    old_id = None
+    new_id = None
+  }
+  set_charge {
+    charge_selection = None
+    charge = None
+  }
+  neutralize_scatterers = False
+  remove_fraction = None
+  random_seed = None
+  move_waters_last = False
+}
+job_title = None
+
+-------------------------------------------------------------------------------
+Performing manipulations
+************************
+Remove altlocs
+-------------------------------------------------------------------------------
+Writing output model
+********************
+Output model file name:  3kqj.pdb_modified.pdb
+Output model file name:  3kqj.pdb_modified.cif
+-------------------------------------------------------------------------------
+All done.
+*********
+3135 @#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%@#$%
+it cost 273.251896858econds
+6e7c 25.38
+6gk3 52.13
+5njg 21.84
+6n7w 6.26
+5kmg 49.73
+5vm7 23.79
+6cvn 48.65
+6b0l 17.91
+5ni1 49.04
+6b0i 17.91
