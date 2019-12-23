@@ -73,13 +73,13 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
       for r in res :
         pdb_code = r.pdb_code.lower()
         chain_id = r.chain_id.lower()
-        #match_info = pdb_id+"_"+chain.id.lower()+"_"+pdb_code+"_"+chain_id
+        match_info = pdb_id+"_"+chain.id.lower()+"_"+pdb_code+"_"+chain_id
         if fetch_pdb == True:
           easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
           pdb_inp = iotbx.pdb.input(pdb_code + ".pdb")
           data_type_X = pdb_inp.get_experiment_type()
           data_resolution = pdb_inp.resolution()
-          if data_resolution > 2.0:continue
+          if data_resolution > 2.01:continue
           if data_type_X != "X-RAY DIFFRACTION": continue
           # there are two conformers in chian B 233 5kdo.pdb,
           # so cann't keep only one conformer situation in hierarchy
@@ -98,10 +98,11 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
         hx = pdb_inp.construct_hierarchy()
         sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
         hx = hx.select(sel_x)
+        hx_h = add_hydrogen_for_hierarchy(hx)
         chain_E = chain
         chain_X = (hx.only_chain())
         hierarchy_E_str = chain_E.parent().parent().as_pdb_string()
-        hierarchy_X_str = hx.as_pdb_string()
+        hierarchy_X_str = hx_h.as_pdb_string()
         (phil_obj, num_sub) = align_tow_chain(chain_E=chain_E, chain_X=chain_X,
                                 str_chain_E=hierarchy_E_str, str_chain_X=hierarchy_X_str)
         if phil_obj is None: continue
@@ -144,7 +145,6 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
     easy_run.call("rm -r {0}".format("hbond.eff"))
   if os.path.exists("myprotein.fasta"):
     easy_run.call("rm -r {0}".format("myprotein.fasta"))
-  #print (phils)
   return (p)
 
 def dump_phil_file(phils,pdb_id,for_phenix_refine=True):
@@ -196,7 +196,6 @@ def align_tow_chain(chain_E,str_chain_E,chain_X,str_chain_X,
   for reses in reses_e[1:]:
     reses_e[0].extend(reses)
   reses_E = reses_e[0]
-  print (match_X_E)
   num_sub = 0
   for r in reses_E:
     if (int(r.resseq.strip()) - 1) in i_seqs:
@@ -220,6 +219,8 @@ def align_tow_chain(chain_E,str_chain_E,chain_X,str_chain_X,
   top=[]
   for r_e in result_E:
     for r_x in result_X:
+      if r_e is None:continue
+      if r_x is None:continue
       # get h bond atoms in model cryo-EM
       atom_A_e = r_e.atom_A
       atom_D_e = r_e.atom_D
@@ -325,7 +326,3 @@ if __name__ == '__main__':
     time_cost = (end - start)
     print("it cost % seconds" % time_cost)
     '''
-
-
-
-
