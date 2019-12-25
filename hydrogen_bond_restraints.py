@@ -55,7 +55,7 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   return hierarchy_new
 
 def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
-                                fetch_pdb=True,dump_phil_files=True,SS_percent=True):
+                                fetch_pdb=False,dump_phil_files=True,SS_percent=True):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
   if hierarchy_pair == None:
@@ -63,6 +63,7 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
     atoms = he_h.atoms()
     atom_total = atoms.size()
     phils = []
+    fetch_list=[]
     num_sum = 0
     for chain in hierarchy.chains():
       if not chain.is_protein(): continue
@@ -81,6 +82,7 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
           data_resolution = pdb_inp.resolution()
           if data_resolution > 2.01:continue
           if data_type_X != "X-RAY DIFFRACTION": continue
+          fetch_list.append(pdb_code)
           # there are two conformers in chian B 233 5kdo.pdb,
           # so cann't keep only one conformer situation in hierarchy
           #easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code + ".pdb"))
@@ -141,6 +143,9 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
     print("\nRestraint file is %s.eff; "%pdb_id)
     print("Percentage of {0} pdb atoms matching is :{1}".format(pdb_id,p))
   easy_run.call("rm -f {0}".format("*modified*"))
+  for i in fetch_list :
+    if i is None:continue
+    easy_run.call("rm -f *{0}*".format(i))
   if os.path.exists("hbond.eff"):
     easy_run.call("rm -r {0}".format("hbond.eff"))
   if os.path.exists("myprotein.fasta"):
@@ -217,6 +222,9 @@ def align_tow_chain(chain_E,str_chain_E,chain_X,str_chain_X,
   # matching restraints
   f = "chain %s and resseq %s and name %s"
   top=[]
+  dis =None
+  ang =None
+  base=None
   for r_e in result_E:
     for r_x in result_X:
       if r_e is None:continue
@@ -255,7 +263,11 @@ def align_tow_chain(chain_E,str_chain_E,chain_X,str_chain_X,
             else:
               dt = r_x.d_HA
               at = r_x.a_DHA
-            dis = """bond {
+            e_d = "%.3f" % (r_e.d_HA)
+            x_d = "%.3f" % (r_x.d_HA)
+            print (e_d,x_d)
+            if e_d != x_d:
+              dis = """bond {
             atom_selection_1 = %s
             atom_selection_2 = %s
             symmetry_operation = %s
@@ -264,7 +276,11 @@ def align_tow_chain(chain_E,str_chain_E,chain_X,str_chain_X,
             }
             """ % (h, a, str(r_e.symop), dt)
             if (str(r_e.symop) != "x,y,z"): continue
-            ang = """angle {
+            e_a = "%.2f" % (r_e.a_DHA)
+            x_a = "%.2f" % (r_x.a_DHA)
+            print (e_a,x_a)
+            if e_a != x_a :
+              ang = """angle {
             atom_selection_1 = %s
             atom_selection_2 = %s
             atom_selection_3 = %s
@@ -273,7 +289,8 @@ def align_tow_chain(chain_E,str_chain_E,chain_X,str_chain_X,
             }
             """ % (a, h, d, at)
             base = dis + ang
-            top.append(base)
+            if base is not None:
+              top.append(base)
   phil_obj = list(set(top))
   return (phil_obj,num_sub)
 
@@ -284,7 +301,8 @@ if __name__ == '__main__':
 
     start = time.time()
     #test_files = ["6d9h.pdb","5k7l.pdb","5vms.pdb","5vm7.pdb","6gdg.pdb","5kmg.pdb","5owx.pdb"]
-    files = ["5m6s.pdb","5nbz.pdb","6h3l.pdb","6h3n.pdb","6n2p.pdb","6o1k.pdb","6o1l.pdb","6o1m.pdb"]
+    #files = ["5m6s.pdb","5nbz.pdb","6h3l.pdb","6h3n.pdb","6n2p.pdb","6o1k.pdb","6o1l.pdb","6o1m.pdb"]
+    files = ["6o1k.pdb", "6o1l.pdb", "6o1m.pdb"]
     dic_per = {}
     for pdb_file in files:
       print (pdb_file,"*"*50)
