@@ -55,54 +55,43 @@ def add_hydrogen_for_hierarchy(hierarchy_old):
   return hierarchy_new
 
 def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
-                                fetch_pdb=False,dump_phil_files=True,SS_percent=True):
+                                fetch_pdb=True,dump_phil_files=True,SS_percent=True):
   params = homology.get_default_params()
   params.num_of_best_pdb = 1
+  phils = []
+  num_sum = 0
+  p=0
+  he_h = add_hydrogen_for_hierarchy(hierarchy)
+  atoms = he_h.atoms()
+  atom_total = atoms.size()
   if hierarchy_pair == None:
-    he_h = add_hydrogen_for_hierarchy(hierarchy)
-    atoms = he_h.atoms()
-    atom_total = atoms.size()
-    phils = []
-    fetch_list=[]
-    num_sum = 0
     for chain in hierarchy.chains():
       if not chain.is_protein(): continue
       sequence = chain.as_padded_sequence()
       res = homology.perfect_pair(sequence, params)
-      phil_result= {}
       if res is None:continue
       for r in res :
         pdb_code = r.pdb_code.lower()
         chain_id = r.chain_id.lower()
-        match_info = pdb_id+"_"+chain.id.lower()+"_"+pdb_code+"_"+chain_id
         if fetch_pdb == True:
           easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
           pdb_inp = iotbx.pdb.input(pdb_code + ".pdb")
-          data_type_X = pdb_inp.get_experiment_type()
-          data_resolution = pdb_inp.resolution()
-          if data_resolution > 2.01:continue
-          if data_type_X != "X-RAY DIFFRACTION": continue
-          fetch_list.append(pdb_code)
-          # there are two conformers in chian B 233 5kdo.pdb,
-          # so cann't keep only one conformer situation in hierarchy
-          #easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_code + ".pdb"))
-          #pdb_inp = iotbx.pdb.input(pdb_code + ".pdb_modified.pdb")
         else:
           pdb_file_local = "/home/wangwensong/PDB/pdb/%s"%pdb_code[1:3] + "/pdb%s"%pdb_code + ".ent.gz"
-          #if not os.path.exists(pdb_file_local): continue
+          if not os.path.exists(pdb_file_local):
+            easy_run.call("phenix.fetch_pdb {0}".format(pdb_code))
+            pdb_file_local=(pdb_code + ".pdb")
           pdb_inp = iotbx.pdb.input(pdb_file_local)
-          data_type_X = pdb_inp.get_experiment_type()
-          data_resolution = pdb_inp.resolution()
-          if data_resolution > 2.0:continue
-          if data_type_X != "X-RAY DIFFRACTION": continue
-          #easy_run.call("phenix.pdbtools {0} remove_alt_confs=True".format(pdb_file_local))
-          #pdb_inp = iotbx.pdb.input("pdb"+pdb_code + ".ent.gz_modified.pdb")
+        data_type_X = pdb_inp.get_experiment_type()
+        data_resolution = pdb_inp.resolution()
+        if data_resolution > 2.0:continue
+        if data_type_X != "X-RAY DIFFRACTION": continue
         hx = pdb_inp.construct_hierarchy()
         sel_x = hx.atom_selection_cache().selection("protein and chain %s" % (chain_id))
         hx = hx.select(sel_x)
-        hx_h = add_hydrogen_for_hierarchy(hx)
         chain_E = chain
-        chain_X = (hx.only_chain())
+        hx_h = add_hydrogen_for_hierarchy(hx)
+        chain_X = (hx_h.only_chain())
         hierarchy_E_str = chain_E.parent().parent().as_pdb_string()
         hierarchy_X_str = hx_h.as_pdb_string()
         (phil_obj, num_sub) = align_tow_chain(chain_E=chain_E, chain_X=chain_X,
@@ -112,11 +101,6 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
         num_sum = num_sum + num_sub
         phils.extend(phil_obj)
   if hierarchy_pair is not None:
-    he_h = add_hydrogen_for_hierarchy(hierarchy)
-    atoms = he_h.atoms()
-    atom_total = atoms.size()
-    phils = []
-    num_sum = 0
     for chain in hierarchy.chains():
       if not chain.is_protein(): continue
       chain_E = chain
@@ -124,14 +108,23 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
       ss = "(%s) and not (resname UNX or resname UNK or resname UNL)" % ss
       sel_x = hierarchy_pair .atom_selection_cache().selection(ss)
       hx = hierarchy_pair .select(sel_x)
-      chain_X = (hx.only_chain())
       hx_h = add_hydrogen_for_hierarchy(hx)
-      hierarchy_E_str = chain_E.parent().parent().as_pdb_string()
-      hierarchy_X_str =  hx_h.as_pdb_string()
-      (phil_obj, num_sub) = align_tow_chain(chain_E=chain_E, chain_X=chain_X,
+      i = 0
+      num_list=[]
+      dict_p={}
+      for chain_X in hx_h.chains():
+        hierarchy_E_str = chain_E.parent().parent().as_pdb_string()
+        hierarchy_X_str =  hx_h.as_pdb_string()
+        (phil_obj, num_sub) = align_tow_chain(chain_E=chain_E, chain_X=chain_X,
                               str_chain_E=hierarchy_E_str,str_chain_X=hierarchy_X_str)
+        if phil_obj is None: continue
+        if num_sub == 0: continue
+        if phil_obj not in phils:
+          num_list.append(num_sub)
+          dict_p[num_sub]=phil_obj
+      num_sub=max(num_list)
+      phil_obj=dict_p[num_sub]
       if phil_obj is None: continue
-      if num_sub == 0: continue
       num_sum = num_sum + num_sub
       phils.extend(phil_obj)
   phils = list(set(phils))
@@ -143,9 +136,6 @@ def prepare_hydrogen_restraints(hierarchy,hierarchy_pair=None,pdb_id=None,
     print("\nRestraint file is %s.eff; "%pdb_id)
     print("Percentage of {0} pdb atoms matching is :{1}".format(pdb_id,p))
   easy_run.call("rm -f {0}".format("*modified*"))
-  for i in fetch_list :
-    if i is None:continue
-    easy_run.call("rm -f *{0}*".format(i))
   if os.path.exists("hbond.eff"):
     easy_run.call("rm -r {0}".format("hbond.eff"))
   if os.path.exists("myprotein.fasta"):
@@ -183,126 +173,138 @@ def as_pymol(model,prefix=None):
 def align_tow_chain(chain_E,str_chain_E,chain_X,str_chain_X,
               distance_ideal=None, sigma_dist=0.1,angle_ideal = None,
               sigma_angle=2, use_actual=True):
+
   se = chain_E.as_padded_sequence()
   sx = chain_X.as_padded_sequence()
   align = mmtbx.alignment.align(
     seq_a = se,
     seq_b = sx)
   alignment = align.extract_alignment()
-  chain_E_id = chain_E.id
-  #chain_X_id = chain_X.id
   (i_seqs,j_seqs) = alignment.exact_match_selections()
-  match_X_E = {}
-  for (i,j) in  zip(i_seqs,j_seqs):
-    match_X_E[j+1]=i
-  reses_e=[]
+  #get E model's residues
+  reses_e = []
   for conformer in (chain_E.conformers()):
     reses_e.append(conformer.residues())
   for reses in reses_e[1:]:
     reses_e[0].extend(reses)
   reses_E = reses_e[0]
+  list_resseq_e=[]
+  for i in reses_E:
+    list_resseq_e.append(int(i.resseq))
+  list_resseq_e=sorted(list_resseq_e)
+  #get X model's residues
+  reses_x = []
+  for conformer in (chain_X.conformers()):
+    reses_x.append(conformer.residues())
+  for reses in reses_x[1:]:
+    reses_x[0].extend(reses)
+  reses_X = reses_x[0]
+  list_resseq_x = []
+  for i in reses_X:
+    list_resseq_x.append(int(i.resseq))
+    list_resseq_x = list(set(list_resseq_x))
+  list_resseq_x = sorted(list_resseq_x)
+  # matching the residue resseqs
+  match_X_E = {}
+  if int(0) in list_resseq_e:
+    if int(0) in list_resseq_x:
+      for (i,j) in  zip(i_seqs,j_seqs):
+        match_X_E[j]= i
+  if int(0) in list_resseq_e:
+    if int(0) not in list_resseq_x:
+      for (i, j) in zip(i_seqs, j_seqs):
+        match_X_E[j+1] = i
+  if int(0) not in list_resseq_e:
+    if int(0) in list_resseq_x:
+      for (i, j) in zip(i_seqs, j_seqs):
+        match_X_E[j] = i+1
+  if int(0) not in list_resseq_e:
+    if int(0) not in list_resseq_x:
+      for (i, j) in zip(i_seqs, j_seqs):
+        match_X_E[j + 1] = i+1
   num_sub = 0
-  for r in reses_E:
-    if (int(r.resseq.strip()) - 1) in i_seqs:
-      num_sub = num_sub + r.atoms_size()
-  # get hydrogen bond informations of model cryo-EM
-  pdb_inp_E = iotbx.pdb.input(source_info=None, lines=str_chain_E)
-  model_E = mmtbx.model.manager(
-    model_input=pdb_inp_E,
-    process_input=True,
-    log=null_out())
-  result_E = mmtbx.nci.hbond.find(model=model_E).result
-  # get hydrogen bond informations of model X-ray
-  pdb_inp = iotbx.pdb.input(source_info=None, lines=str_chain_X)
-  model = mmtbx.model.manager(
-    model_input=pdb_inp,
-    process_input=True,
-    log=null_out())
-  result_X = mmtbx.nci.hbond.find(model=model).result
-  # matching restraints
-  f = "chain %s and resseq %s and name %s"
-  top=[]
-  dis =None
-  ang =None
-  base=None
-  for r_e in result_E:
+  phil_obj = None
+  if (len(match_X_E.items())) >=2:
+    for r in reses_E:
+      if (int(r.resseq.strip()) - 1) in i_seqs:
+        num_sub = num_sub + r.atoms_size()
+    # get hydrogen bond informations of model cryo-EM
+    pdb_inp_E = iotbx.pdb.input(source_info=None, lines=str_chain_E)
+    model_E = mmtbx.model.manager(
+      model_input=pdb_inp_E,
+      process_input=True,
+      log=null_out())
+    result_E = mmtbx.nci.hbond.find(model=model_E).result
+    # get hydrogen bond informations of model X-ray
+    pdb_inp = iotbx.pdb.input(source_info=None, lines=str_chain_X)
+    model = mmtbx.model.manager(
+      model_input=pdb_inp,
+      process_input=True,
+      log=null_out())
+    result_X = mmtbx.nci.hbond.find(model=model).result
+    # matching restraints
+    f = "chain %s and resseq %s and name %s"
+    symmetry_operation=None
+    for r_e in result_E:
+      symmetry_operation=str(r_e.symop)
+      if symmetry_operation is not None:
+        break
+    top=[]
     for r_x in result_X:
-      if r_e is None:continue
-      if r_x is None:continue
-      # get h bond atoms in model cryo-EM
-      atom_A_e = r_e.atom_A
-      atom_D_e = r_e.atom_D
-      atom_H_e = r_e.atom_H
       # get h bond atoms in model X-ray
+      r_chain_X=r_x.atom_A.chain
+      if r_chain_X!=chain_X.id:continue
+      d_HA=r_x.d_HA
       atom_A_x = r_x.atom_A
       atom_D_x = r_x.atom_D
       atom_H_x = r_x.atom_H
       #selection matching resseq in model cryo-EM
       if not match_X_E.has_key(int(atom_A_x.resseq.strip())):continue
-      if not match_X_E.has_key(int(atom_D_x.resseq.strip())):continue
+      #if not match_X_E.has_key(int(atom_D_x.resseq.strip())):continue
       if not match_X_E.has_key(int(atom_H_x.resseq.strip())):continue
-      # make sure matching reses
-      if match_X_E[int(atom_A_x.resseq.strip())] !=(int(atom_A_e.resseq.strip())):continue
-      if match_X_E[int(atom_D_x.resseq.strip())] !=(int(atom_D_e.resseq.strip())):continue
-      if match_X_E[int(atom_H_x.resseq.strip())] !=(int(atom_H_e.resseq.strip())):continue
-      if atom_A_e.name == atom_A_x.name:
-        if atom_D_e.name == atom_D_x.name:
-          if atom_D_e.name == atom_D_x.name:
-            a = f % (atom_A_e.chain,atom_A_e.resseq,atom_A_e.name)
-            d = f % (atom_D_e.chain,atom_D_e.resseq,atom_D_e.name)
-            h = f % (atom_H_e.chain,atom_H_e.resseq,atom_H_e.name)
-            if (not use_actual):
-              if (r_e.d_HA < 2.5):
-                dt = 2.05
-              else:
-                dt = 2.8
-              if (r_e.a_DHA < 130):
-                at = 115
-              else:
-                at = 160
-            else:
-              dt = r_x.d_HA
-              at = r_x.a_DHA
-            e_d = "%.3f" % (r_e.d_HA)
-            x_d = "%.3f" % (r_x.d_HA)
-            print (e_d,x_d)
-            if e_d != x_d:
-              dis = """bond {
+      a = f % (chain_E.id,match_X_E[int(atom_A_x.resseq.strip())],atom_A_x.name)
+      d = f % (chain_E.id,match_X_E[int(atom_D_x.resseq.strip())],atom_D_x.name)
+      h = f % (chain_E.id,match_X_E[int(atom_H_x.resseq.strip())],atom_H_x.name)
+      if (not use_actual):
+        if (d_HA < 2.5):
+          dt = 2.05
+        else:
+          dt = 2.8
+        if (r_x.a_DHA < 130):
+          at = 115
+        else:
+          at = 160
+      else:
+        dt = r_x.d_HA
+        at = r_x.a_DHA
+      dis = """bond {
             atom_selection_1 = %s
             atom_selection_2 = %s
             symmetry_operation = %s
             distance_ideal = %f
             sigma = 0.05
-            }
-            """ % (h, a, str(r_e.symop), dt)
-            if (str(r_e.symop) != "x,y,z"): continue
-            e_a = "%.2f" % (r_e.a_DHA)
-            x_a = "%.2f" % (r_x.a_DHA)
-            print (e_a,x_a)
-            if e_a != x_a :
-              ang = """angle {
+      }
+      """ % (h, a, symmetry_operation, dt)
+      if (str(r_x.symop) != "x,y,z"): continue
+      ang = """angle {
             atom_selection_1 = %s
             atom_selection_2 = %s
             atom_selection_3 = %s
             angle_ideal = %f
             sigma = 5
-            }
-            """ % (a, h, d, at)
-            base = dis + ang
-            if base is not None:
-              top.append(base)
-  phil_obj = list(set(top))
+      }
+      """ % (a, h, d, at)
+      base = dis + ang
+      top.append(base)
+    phil_obj = list(set(top))
   return (phil_obj,num_sub)
 
 
 
 if __name__ == '__main__':
-    ### test past
-
     start = time.time()
     #test_files = ["6d9h.pdb","5k7l.pdb","5vms.pdb","5vm7.pdb","6gdg.pdb","5kmg.pdb","5owx.pdb"]
-    #files = ["5m6s.pdb","5nbz.pdb","6h3l.pdb","6h3n.pdb","6n2p.pdb","6o1k.pdb","6o1l.pdb","6o1m.pdb"]
-    files = ["6o1k.pdb", "6o1l.pdb", "6o1m.pdb"]
+    files = ["5m6s.pdb","5nbz.pdb","6h3l.pdb","6h3n.pdb","6n2p.pdb","6o1k.pdb","6o1l.pdb","6o1m.pdb"]
     dic_per = {}
     for pdb_file in files:
       print (pdb_file,"*"*50)
@@ -344,3 +346,7 @@ if __name__ == '__main__':
     time_cost = (end - start)
     print("it cost % seconds" % time_cost)
     '''
+
+
+
+
